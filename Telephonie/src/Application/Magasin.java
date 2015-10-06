@@ -1,4 +1,13 @@
-package inventaire;
+/*
+ * Auteurs : Marina Blin - Julian Didier
+ * 
+ * Description de la classe : Magasin
+ * 	Classe d'application
+ */
+
+package Application;
+
+import inventaire.*;
 
 public class Magasin {
 

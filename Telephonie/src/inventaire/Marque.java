@@ -1,28 +1,38 @@
+/**
+ * Auteurs : Marina Blin - Julian Didier
+ * 
+ * Description de la classe : Marque
+ * 	Classe permettant de définir les différentes caractéristiques d'une marque.
+ */
+
 package inventaire;
 
 public class Marque {
 
+	// Definition attributs
 	private String nom;
 
-	public String getNom() {
-		return this.nom;
-	}
-
+	// Definition constructeur
 	/**
-	 * 
-	 * @param nom
-	 */
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-
-	/**
+	 * Constructeur de la classe Marque
 	 * 
 	 * @param nom
 	 */
 	public Marque(String nom) {
-		// TODO - implement Marque.Marque
-		throw new UnsupportedOperationException();
+		this.nom = nom;
 	}
 
+	// Definition getter and setter
+	public String getNom() {
+		return this.nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	// Definition method (process?)
+	public String toString() {
+		return nom;
+	}
 }
