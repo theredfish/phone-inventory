@@ -1,3 +1,9 @@
+/*
+ * Auteurs : Marina Blin - Julian Didier
+ * 
+ * Description de la classe :
+ */
+
 package inventaire;
 
 import java.util.*;
