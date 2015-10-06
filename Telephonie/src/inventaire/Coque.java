@@ -1,12 +1,23 @@
+/**
+ * Auteurs : Marina Blin - Julian Didier
+ * 
+ * Description de la classe : Coque
+ * 	Classe fille de la classe Accessoire
+ * 	Classe permettant de définir les différentes caractéristiques d'une coque
+ */
+
 package inventaire;
 
 import java.util.TreeSet;
 
-public class Coque extends Accessoire {
-
+public class Coque extends Accessoire 
+{
+	// Definition attributs
 	Couleur couleur;
 
+	// Definition constructeur
 	/**
+	 * Constructeur de la classe Coque
 	 * 
 	 * @param reference
 	 * @param intitule
@@ -19,10 +30,16 @@ public class Coque extends Accessoire {
 		super(reference, intitule, prix, marquesCompatibles);
 	}
 
-	@Override
+	// Definition getter and setter
+	
+	
+	// Definition method (process?)
 	protected Article recherche() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	public String toString() {
+		return "La coque " + super.toString();
+	}
 }
