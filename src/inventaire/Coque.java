@@ -3,7 +3,7 @@
  * 
  * Description de la classe : Coque
  * 	Classe fille de la classe Accessoire
- * 	Classe permettant de définir les différentes caractéristiques d'une coque
+ * 	Classe permettant de dï¿½finir les diffï¿½rentes caractï¿½ristiques d'une coque
  */
 
 package inventaire;
@@ -34,7 +34,7 @@ public class Coque extends Accessoire
 	
 	
 	// Definition method (process?)
-	protected Article recherche() {
+	public Article recherche(Object object) {
 		// TODO Auto-generated method stub
 		return null;
 	}

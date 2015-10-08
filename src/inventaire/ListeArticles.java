@@ -14,10 +14,11 @@ import java.util.*;
 
 public class ListeArticles implements Comparable 
 {
-	// Définition attributs
-	Collection<Article> articles;
+	/**
+	 * Liste des articles
+	 */
+	ArrayList<Article> articles;
 
-	// Définition constructeur
 	/**
 	 * Constructeur de la classe ListeArticles
 	 * 
@@ -35,14 +36,12 @@ public class ListeArticles implements Comparable
 	{
 		this.articles = new ArrayList<Article>();
 	}
-
-	// Définition getter et setter
 	
-	// Définition des méthodes
 	/**
 	 * Méthode permettant d'ajouter un article à la liste
-	 * @param article : Article - Article que l'on souhaite ajouter à la liste
-	 * @return True si l'article à bien été ajouté sinon False
+	 * 
+	 * @param Article article Article que l'on souhaite ajouter à la liste
+	 * @return Boolean True si l'article à bien été ajouté sinon False
 	 */
 	public boolean ajouter(Article article) 
 	{
@@ -51,8 +50,8 @@ public class ListeArticles implements Comparable
 	
 	/**
 	 * Méthode permettant de supprimer un article de la liste
+	 * 
 	 * @param article : Article - Article que l'on souhaite supprimer à la liste
-	 * @return 
 	 * @return True si l'article à bien été supprimé sinon False
 	 */
 	public boolean supprimer(Article article) 
@@ -64,7 +63,8 @@ public class ListeArticles implements Comparable
 
 	/**
 	 * Méthode permettant d'afficher tous les articles suivant leur référence
-	 * @param reference : String - Référence que nous voulons pour les articles
+	 * 
+	 * @param String reference Référence que nous voulons pour les articles
 	 * @return La liste des article portant la référence souhaitée - ArrayList<Article>
 	 */
 	public ArrayList<Article> tousLesArticles_ParRef(String reference) 
@@ -82,7 +82,8 @@ public class ListeArticles implements Comparable
 
 	/**
 	 * Méthode permettant d'afficher tous les articles suivant leur intitulé
-	 * @param intitule : String - Intitulé que nous voulons pour les articles
+	 * 
+	 * @param String intitule Intitulé que nous voulons pour les articles
 	 * @return La liste des article portant l'intitulé souhaité - ArrayList<Article>
 	 */
 	public ArrayList<Article> tousLesArticles_ParIntitule(String intitule) 
@@ -100,7 +101,8 @@ public class ListeArticles implements Comparable
 
 	/**
 	 * Méthode permettant d'afficher tous les articles suivant leur prix
-	 * @param prix : int - Prix que nous voulons pour les articles
+	 * 
+	 * @param int prix Prix que nous voulons pour les articles
 	 * @return La liste des article portant le prix souhaité - ArrayList<Article>
 	 */
 	public ArrayList<Article> tousLesArticles_ParPrix(int prix) 

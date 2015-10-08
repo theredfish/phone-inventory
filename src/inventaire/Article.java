@@ -2,7 +2,7 @@
  * Auteurs : Marina Blin - Julian Didier
  * 
  * Description de la classe : Article
- * 	Classe abstraite permettant de dÈfinir les diffÈrentes caractÈristiques d'un article
+ * 	Classe abstraite permettant de d√©finir les diff√©rentes caract√©ristiques d'un article
  */
 
 package inventaire;
@@ -18,11 +18,12 @@ public abstract class Article
 	/**
 	 * Constructeur de la classe Article
 	 * 
-	 * @param reference
-	 * @param intitule
-	 * @param prix
+	 * @param reference : String - r√©f√©rence d'un article
+	 * @param intitule : String - intitul√© d'un article
+	 * @param prix : double - prix d'un article
 	 */
-	protected Article(String reference, String intitule, double prix) {
+	protected Article(String reference, String intitule, double prix) 
+	{
 		this.reference = reference;
 		this.intitule = intitule;
 		this.prix = prix;
@@ -55,9 +56,9 @@ public abstract class Article
 
 	// Definition method (process?)
 	public String toString() {
-		return " a pour rÈfÈrence '" + reference + "' porte l'intitulÈ " + intitule + " a pour prix " + prix + " euros";
+		return " a pour r√©f√©rence '" + reference + "' porte l'intitul√© " + intitule + " a pour prix " + prix + " euros";
 	}
 
-	protected abstract Article recherche();
+	protected abstract Article recherche(Object object);
 
 }
