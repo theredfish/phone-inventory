@@ -3,11 +3,13 @@
  * 
  * Description de la classe : ListeArticle
  * 	Classe implementant la classe Comparable
- * 	Classe permettant de 
+ * 	Classe permettant d'avoir une liste d'article
  */
 
 package inventaire;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 
 public class ListeArticles implements Comparable 
@@ -112,5 +114,20 @@ public class ListeArticles implements Comparable
 		}
 		
 		return articlePrix;
+	}
+	
+	/**
+	 * Methode permettant de sauvegarder les articles dans un fichier
+	 */
+	public void sauvegarde()
+	{
+		try
+		{
+			FileWriter fileSave = new FileWriter("../save.txt");
+		}
+		catch (IOException message)
+		{
+			System.out.println(message.getMessage());
+		}
 	}
 }
