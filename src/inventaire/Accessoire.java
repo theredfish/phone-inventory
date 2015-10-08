@@ -8,6 +8,8 @@
 
 package inventaire;
 
+import inventaire.*;
+
 import java.util.*;
 
 public abstract class Accessoire extends Article 
