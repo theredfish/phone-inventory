@@ -28,7 +28,6 @@ public class Cordon extends Accessoire
 		super(reference, intitule, prix, marquesCompatibles);
 	}
 
-	// Definition getter and setter
 	public double getLongueur() {
 		return this.longueur;
 	}

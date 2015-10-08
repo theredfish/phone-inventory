@@ -1,58 +1,86 @@
 /**
- * Auteurs : Marina Blin - Julian Didier
- * 
- * Description de la classe : Telephone
- * 	Classe fille de la classe Article.
- * 	Classe permettant de d�finir les diff�rentes caract�ristiques d'un t�l�phone.
+ * @author Marina Blin - Julian Didier
+ * @version 1.0.0
  */
 
 package inventaire;
 
+/**
+ * 	Classe permettant de définir les différentes caractéristiques d'un téléphone.
+ */
 public class Telephone extends Article 
 {
-	// Definition attributs
-	Operateur operateur;
-	Marque marque;
+	/**
+	 * Operateur L'opérateur du téléphone
+	 */
+	private Operateur operateur;
+	/**
+	 * Marque La marque du téléphone
+	 */
+	private Marque marque;
 
-	// Definition constructeur
 	/**
 	 * Constructeur de la classe Telephone
 	 * 
-	 * @param reference
-	 * @param intitule
-	 * @param prix
-	 * @param marque
-	 * @param operateur
+	 * @param String reference : La reference du téléphone
+	 * @param String intitule : L'intitule du téléphone
+	 * @param double prix : Le prix du téléphone
+	 * @param Marque marque : La marque du téléphone
+	 * @param Operateur operateur : L'opérateur du téléphone
 	 */
-	public Telephone(String reference, String intitule, double prix, Marque marque, Operateur operateur) {
+	public Telephone(String reference, String intitule, double prix, Marque marque, Operateur operateur) 
+	{
 		super(reference, intitule, prix);
 		this.marque = marque;
 		this.operateur = operateur;
 	}
 
-	// Definition getter and setter
-	public Operateur getOperateur() {
+	/**
+	 * Getter permettant de connaitre l'opérateur d'un téléphone
+	 * 
+	 * @return Operateur operateur
+	 */
+	public Operateur getOperateur() 
+	{
 		return operateur;
 	}
 
-	public void setOperateur(Operateur operateur) {
+	/**
+	 * Setter permettant de changer l'operateur du téléphone
+	 * 
+	 * @param Operateur operateur : L'operateur du téléphone
+	 */
+	public void setOperateur(Operateur operateur) 
+	{
 		this.operateur = operateur;
 	}
 
-	public Marque getMarque() {
+	/**
+	 * Getter permettant de connaitre la marque d'un téléphone
+	 * 
+	 * @return Marque marque
+	 */
+	public Marque getMarque() 
+	{
 		return marque;
 	}
 
-	public void setMarque(Marque marque) {
+	/**
+	 * Setter permettant de changer la marque du téléphone
+	 * 
+	 * @param Marque marque : La marque du téléphone
+	 */
+	public void setMarque(Marque marque) 
+	{
 		this.marque = marque;
 	}
 
-	// Definition method (process?)
-	public Article recherche(Object object) {
-		return null;
-	}
-
-	public String toString() {
+	/**
+	 * Méthode permettant d'afficher les informations du téléphone
+	 * @return String
+	 */
+	public String toString() 
+	{
 		return "Téléphone de la marque " + marque + " avec l'opérateur " + operateur + super.toString();
 	}
 }
