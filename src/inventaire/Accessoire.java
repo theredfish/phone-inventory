@@ -48,7 +48,7 @@ public abstract class Accessoire extends Article
 	 * 
 	 * @return TreeSet<Marque> L'ensemble des accessoires
 	 */
-	public TreeSet<Marque> getMarquesCompatibles() 
+	protected TreeSet<Marque> getMarquesCompatibles() 
 	{
 		return marquesCompatibles;
 	}
@@ -58,7 +58,7 @@ public abstract class Accessoire extends Article
 	 * 
 	 * @param marquesCompatibles : TreeSet<Marque> - Liste des accessoires
 	 */
-	public void setMarquesCompatibles(TreeSet<Marque> marquesCompatibles) 
+	protected void setMarquesCompatibles(TreeSet<Marque> marquesCompatibles) 
 	{
 		this.marquesCompatibles = marquesCompatibles;
 	}

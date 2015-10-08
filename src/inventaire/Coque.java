@@ -1,45 +1,42 @@
 /**
- * Auteurs : Marina Blin - Julian Didier
- * 
- * Description de la classe : Coque
- * 	Classe fille de la classe Accessoire
- * 	Classe permettant de d�finir les diff�rentes caract�ristiques d'une coque
+ * @author Marina Blin - Julian Didier
+ * @version 1.0.0
  */
 
 package inventaire;
 
 import java.util.TreeSet;
 
+/** 
+ * Classe permettant de définir les différentes caractéristiques d'une coque
+ */
 public class Coque extends Accessoire 
 {
-	// Definition attributs
-	Couleur couleur;
+	/**
+	 * Couleur couleur d'un accessoire
+	 */
+	private Couleur couleur;
 
-	// Definition constructeur
 	/**
 	 * Constructeur de la classe Coque
 	 * 
-	 * @param reference
-	 * @param intitule
-	 * @param prix
-	 * @param marquesCompatibles
-	 * @param couleur
+	 * @param String reference : La reference d'un article
+	 * @param String intitule : L'intitule d'un article
+	 * @param double prix : Le prix d'un article
+	 * @param TreeSet<Marque> marquesCompatibles : Les marques associées à l'article
+	 * @param Couleur couleur : La couleur de la coque
 	 */
-	public Coque(String reference, String intitule, double prix, TreeSet<Marque> marquesCompatibles, Couleur couleur) {
-		// TODO - implement Coque.Coque
+	public Coque(String reference, String intitule, double prix, TreeSet<Marque> marquesCompatibles, Couleur couleur) 
+	{
 		super(reference, intitule, prix, marquesCompatibles);
+		this.couleur = couleur;
 	}
 
-	// Definition getter and setter
-	
-	
-	// Definition method (process?)
-	protected Article recherche() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public String toString() {
-		return "La coque " + super.toString();
+	/**
+	 * Méthode permettant d'afficher les informations de la coque
+	 */
+	public String toString() 
+	{
+		return "La coque " + couleur + super.toString();
 	}
 }

@@ -3,7 +3,7 @@
  * 
  * Description de la classe : Usb
  * 	Classe fille de la classe Chargeur
- * 	Classe permettant d'avoir les différentes caractéritiques d'un chargeur USB
+ * 	Classe permettant d'avoir les diffï¿½rentes caractï¿½ritiques d'un chargeur USB
  */
 
 package inventaire;
@@ -23,14 +23,14 @@ public class Usb extends Chargeur
 	 * @param prix
 	 * @param marquesCompatibles
 	 */
-	protected Usb(String reference, String intitule, double prix, TreeSet<Marque> marquesCompatibles) {
+	public Usb(String reference, String intitule, double prix, TreeSet<Marque> marquesCompatibles) {
 		super(reference, intitule, prix, marquesCompatibles);
 	}
 	
 	// Definition getter and setter
 
 	// Definition method (process?)
-	protected Article recherche() {
+	public Article recherche(Object object) {
 		// TODO Auto-generated method stub
 		return null;
 	}

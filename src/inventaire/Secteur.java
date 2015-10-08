@@ -3,7 +3,7 @@
  * 
  * Description de la classe : Secteur
  * 	Classe fille de la classe Chargeur
- * 	Classe permettant de définir les caractéristiques d'un chargeur secteur
+ * 	Classe permettant de dï¿½finir les caractï¿½ristiques d'un chargeur secteur
  */
 
 package inventaire;
@@ -23,14 +23,14 @@ public class Secteur extends Chargeur
 	 * @param prix
 	 * @param marquesCompatibles
 	 */
-	protected Secteur(String reference, String intitule, double prix, TreeSet<Marque> marquesCompatibles) {
+	public Secteur(String reference, String intitule, double prix, TreeSet<Marque> marquesCompatibles) {
 		super(reference, intitule, prix, marquesCompatibles);
 	}
 
 	// Definition getter and setter
 	
 	// Definition method (process?)
-	protected Article recherche() {
+	public Article recherche(Object object) {
 		// TODO Auto-generated method stub
 		return null;
 	}

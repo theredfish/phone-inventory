@@ -1,9 +1,6 @@
 /**
- * Auteurs : Marina Blin - Julian Didier
- * 
- * Description de la classe : ListeArticle
- * 	Classe implementant la classe Comparable
- * 	Classe permettant d'avoir une liste d'article
+ * @author Marina Blin - Julian Didier
+ * @version 1.0.0
  */
 
 package inventaire;
@@ -12,16 +9,20 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 
+/** 
+ * 	Classe permettant d'avoir une liste d'article
+ */
 public class ListeArticles implements Comparable 
 {
-	// Définition attributs
-	Collection<Article> articles;
+	/**
+	 * ArrayList Liste des articles
+	 */
+	ArrayList<Article> articles;
 
-	// Définition constructeur
 	/**
 	 * Constructeur de la classe ListeArticles
 	 * 
-	 * @param articles : ArrayList<Article> - Liste d'article
+	 * @param ArrayList<Article> articles Liste d'article
 	 */	
 	public ListeArticles(ArrayList<Article> articles) 
 	{
@@ -35,14 +36,12 @@ public class ListeArticles implements Comparable
 	{
 		this.articles = new ArrayList<Article>();
 	}
-
-	// Définition getter et setter
 	
-	// Définition des méthodes
 	/**
 	 * Méthode permettant d'ajouter un article à la liste
-	 * @param article : Article - Article que l'on souhaite ajouter à la liste
-	 * @return True si l'article à bien été ajouté sinon False
+	 * 
+	 * @param Article article Article que l'on souhaite ajouter à la liste
+	 * @return Boolean True si l'article à bien été ajouté sinon False
 	 */
 	public boolean ajouter(Article article) 
 	{
@@ -51,8 +50,8 @@ public class ListeArticles implements Comparable
 	
 	/**
 	 * Méthode permettant de supprimer un article de la liste
+	 * 
 	 * @param article : Article - Article que l'on souhaite supprimer à la liste
-	 * @return 
 	 * @return True si l'article à bien été supprimé sinon False
 	 */
 	public boolean supprimer(Article article) 
@@ -64,57 +63,30 @@ public class ListeArticles implements Comparable
 
 	/**
 	 * Méthode permettant d'afficher tous les articles suivant leur référence
-	 * @param reference : String - Référence que nous voulons pour les articles
+	 * 
+	 * @param String reference Référence que nous voulons pour les articles
 	 * @return La liste des article portant la référence souhaitée - ArrayList<Article>
 	 */
-	public ArrayList<Article> tousLesArticles_ParRef(String reference) 
+	public ArrayList<Article> tousLesArticles_ParRef() 
 	{
 		ArrayList<Article> articleRef = new ArrayList<>();
-		
-		for (Article article : articles) 
-		{
-			if (article.getReference().equals(reference))
-				articleRef.add(article);
-		}
 		
 		return articleRef;
 	}
 
 	/**
 	 * Méthode permettant d'afficher tous les articles suivant leur intitulé
-	 * @param intitule : String - Intitulé que nous voulons pour les articles
+	 * 
+	 * @param String intitule Intitulé que nous voulons pour les articles
 	 * @return La liste des article portant l'intitulé souhaité - ArrayList<Article>
 	 */
-	public ArrayList<Article> tousLesArticles_ParIntitule(String intitule) 
+	public ArrayList<Article> tousLesArticles_ParIntitule() 
 	{
 		ArrayList<Article> articleIntitule = new ArrayList<>();
-		
-		for (Article article : articles) 
-		{
-			if (article.getIntitule().equals(intitule))
-				articleIntitule.add(article);
-		}
-		
+				
 		return articleIntitule;
 	}
 
-	/**
-	 * Méthode permettant d'afficher tous les articles suivant leur prix
-	 * @param prix : int - Prix que nous voulons pour les articles
-	 * @return La liste des article portant le prix souhaité - ArrayList<Article>
-	 */
-	public ArrayList<Article> tousLesArticles_ParPrix(int prix) 
-	{
-		ArrayList<Article> articlePrix = new ArrayList<>();
-		
-		for (Article article : articles) 
-		{
-			if (article.getPrix() == prix)
-				articlePrix.add(article);
-		}
-		
-		return articlePrix;
-	}
 	
 	/**
 	 * Methode permettant de sauvegarder les articles dans un fichier
@@ -129,5 +101,24 @@ public class ListeArticles implements Comparable
 		{
 			System.out.println(message.getMessage());
 		}
+	}
+	
+	/**
+	 * Méthode permettant d'afficher tous les articles suivant leur prix
+	 * 
+	 * @param int prix Prix que nous voulons pour les articles
+	 * @return La liste des article portant le prix souhaité - ArrayList<Article>
+	 */
+	public ArrayList<Article> chercherArticlesPrix(int prix) 
+	{
+		ArrayList<Article> articlePrix = new ArrayList<>();
+		
+		for (Article article : articles) 
+		{
+			if (article.getPrix() == prix)
+				articlePrix.add(article);
+		}
+		
+		return articlePrix;
 	}
 }
