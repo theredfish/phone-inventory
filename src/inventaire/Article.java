@@ -1,26 +1,34 @@
 /**
- * Auteurs : Marina Blin - Julian Didier
- * 
- * Description de la classe : Article
- * 	Classe abstraite permettant de définir les différentes caractéristiques d'un article
+ * @author Marina Blin - Julian Didier
+ * @version 1.0.0
  */
 
 package inventaire;
 
+/**
+ * 	Classe abstraite permettant de définir les différentes caractéristiques d'un article
+ */
 public abstract class Article 
 {
-	// Definition attributs
+	/**
+	 * String La reference d'un article
+	 */
 	private String reference;
+	/**
+	 * String L'intitule d'un article
+	 */
 	private String intitule;
+	/**
+	 * Double Le prix d'un article
+	 */
 	private double prix;
 	
-	// Definition constructeur
 	/**
 	 * Constructeur de la classe Article
 	 * 
-	 * @param reference : String - référence d'un article
-	 * @param intitule : String - intitulé d'un article
-	 * @param prix : double - prix d'un article
+	 * @param String reference : La reference d'un article
+	 * @param String intitule : L'intitule d'un article
+	 * @param double prix : Le prix d'un article
 	 */
 	protected Article(String reference, String intitule, double prix) 
 	{
@@ -29,36 +37,64 @@ public abstract class Article
 		this.prix = prix;
 	}
 	
-	// Definition getter and setter
-	protected String getReference() {
+	/**
+	 * Getter permettant de connaitre la référence d'un article
+	 * @return String reference
+	 */
+	protected String getReference() 
+	{
 		return reference;
 	}
 
-	protected void setReference(String reference) {
+	/**
+	 * Setter permettant de changer la référence d'un article
+	 * @param String reference La référence de l'article
+	 */
+	protected void setReference(String reference) 
+	{
 		this.reference = reference;
 	}
 
-	protected String getIntitule() {
+	/**
+	 * Getter permettant de connaitre l'intitulé d'un article
+	 * @return String intitule
+	 */
+	protected String getIntitule() 
+	{
 		return this.intitule;
 	}
 
-	protected void setIntitule(String intitule) {
+	/**
+	 * Setter permettant de changer l'intitulé d'un article
+	 * @param String reference L'intitulé de l'article
+	 */
+	protected void setIntitule(String intitule) 
+	{
 		this.intitule = intitule;
 	}
 
-	protected double getPrix() {
+	/**
+	 * Getter permettant de connaitre le prix d'un article
+	 * @return int prix
+	 */
+	protected double getPrix() 
+	{
 		return this.prix;
 	}
 
-	protected void setPrix(double prix) {
+	/**
+	 * Setter permettant de changer le prix d'un article
+	 * @param int reference Le prix de l'article
+	 */
+	protected void setPrix(double prix) 
+	{
 		this.prix = prix;
 	}
 
-	// Definition method (process?)
+	/**
+	 * Méthode permettant d'afficher les informations de l'article
+	 */
 	public String toString() {
 		return " a pour référence '" + reference + "' porte l'intitulé " + intitule + " a pour prix " + prix + " euros";
 	}
-
-	protected abstract Article recherche(Object object);
-
 }
