@@ -10,38 +10,53 @@ import java.util.*;
 
 public class ListeArticles implements Comparable 
 {
-	// Definition attributs
+	// Définition attributs
 	Collection<Article> articles;
 
-	// Definition constructeur
+	// Définition constructeur
 	/**
 	 * Constructeur de la classe ListeArticles
 	 * 
-	 * @param articles
-	 */
-	public ListeArticles(Collection<Article> articles)
+	 * @param articles : ArrayList<Article> - Liste d'article
+	 */	
+	public ListeArticles(ArrayList<Article> articles) 
 	{
 		this.articles = articles;
+	}
+	
+	/**
+	 * Constructeur de la classe ListeArticle
+	 */
+	public ListeArticles() 
+	{
+		this.articles = new Collection<Article>();
 	}
 
 	// Definition getter and setter
 	
-	// Definition method (process?)
-	public void ajouter(Article article) {
-		// TODO - implement ListeArticles.ajouter
-		throw new UnsupportedOperationException();
+	// Definition des méthodes
+	/**
+	 * Méthode permettant d'ajouter un article à la liste
+	 * @param article : Article - Article que l'on souhaite ajouter à la liste
+	 * @return True si l'article à bien été ajouté sinon False
+	 */
+	public boolean ajouter(Article article) 
+	{
+		return articles.add(article);
 	}
 	
-	public void supprimer(Article article) {
-		// TODO - implement ListeArticles.supprimer
-		throw new UnsupportedOperationException();
+	/**
+	 * Méthode permettant de supprimer un article de la liste
+	 * @param article : Article - Article que l'on souhaite supprimer à la liste
+	 * @return True si l'article à bien été supprimé sinon False
+	 */
+	public return supprimer(Article article) 
+	{
+		if (articles.concontains(article))
+			return articles.remove(article);
 	}
 
-	public ListeArticles(ArrayList<Article> articles) {
-		// TODO - implement ListeArticles.ListeArticles
-		throw new UnsupportedOperationException();
-	}
-
+	
 	public ArrayList<Article> tousLesArticles_ParRef() {
 		// TODO - implement ListeArticles.tousLesArticles_ParRef
 		throw new UnsupportedOperationException();
