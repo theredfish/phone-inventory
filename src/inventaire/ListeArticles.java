@@ -1,7 +1,9 @@
 /**
  * Auteurs : Marina Blin - Julian Didier
  * 
- * Description de la classe :
+ * Description de la classe : ListeArticle
+ * 	Classe implementant la classe Comparable
+ * 	Classe permettant de 
  */
 
 package inventaire;
@@ -29,12 +31,12 @@ public class ListeArticles implements Comparable
 	 */
 	public ListeArticles() 
 	{
-		this.articles = new Collection<Article>();
+		this.articles = new ArrayList<Article>();
 	}
 
-	// Definition getter and setter
+	// Définition getter et setter
 	
-	// Definition des méthodes
+	// Définition des méthodes
 	/**
 	 * Méthode permettant d'ajouter un article à la liste
 	 * @param article : Article - Article que l'on souhaite ajouter à la liste
@@ -48,26 +50,45 @@ public class ListeArticles implements Comparable
 	/**
 	 * Méthode permettant de supprimer un article de la liste
 	 * @param article : Article - Article que l'on souhaite supprimer à la liste
+	 * @return 
 	 * @return True si l'article à bien été supprimé sinon False
 	 */
-	public return supprimer(Article article) 
+	public boolean supprimer(Article article) 
 	{
-		if (articles.concontains(article))
+		if (articles.contains(article))
 			return articles.remove(article);
+		return false;
 	}
 
-	
-	public ArrayList<Article> tousLesArticles_ParRef() {
+	/**
+	 * Méthode permettant d'afficher tous les articles suivant leur référence
+	 * @param reference : String - Référence que nous voulons pour les articles
+	 * @return La liste des article portant la référence souhaitée - ArrayList<Article>
+	 */
+	public ArrayList<Article> tousLesArticles_ParRef(String reference) 
+	{
 		// TODO - implement ListeArticles.tousLesArticles_ParRef
 		throw new UnsupportedOperationException();
 	}
 
-	public ArrayList<Article> tousLesArticles_ParIntitule() {
+	/**
+	 * Méthode permettant d'afficher tous les articles suivant leur intitulé
+	 * @param intitule : String - Intitulé que nous voulons pour les articles
+	 * @return La liste des article portant l'intitulé souhaité - ArrayList<Article>
+	 */
+	public ArrayList<Article> tousLesArticles_ParIntitule(String intitule) 
+	{
 		// TODO - implement ListeArticles.tousLesArticles_ParIntitule
 		throw new UnsupportedOperationException();
 	}
 
-	public ArrayList<Article> tousLesArticles_ParPrix() {
+	/**
+	 * Méthode permettant d'afficher tous les articles suivant leur prix
+	 * @param prix : int - Prix que nous voulons pour les articles
+	 * @return La liste des article portant le prix souhaité - ArrayList<Article>
+	 */
+	public ArrayList<Article> tousLesArticles_ParPrix(int prix) 
+	{
 		// TODO - implement ListeArticles.tousLesArticles_ParPrix
 		throw new UnsupportedOperationException();
 	}
