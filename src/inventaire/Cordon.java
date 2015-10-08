@@ -3,7 +3,7 @@
  * 
  * Description de la classe : Cordon
  * 	Classe fille de la classe Accessoire
- * 	Classe permettant de définir les différentes caractéristiques d'un cordon
+ * 	Classe permettant de dï¿½finir les diffï¿½rentes caractï¿½ristiques d'un cordon
  */
 
 package inventaire;
@@ -24,7 +24,7 @@ public class Cordon extends Accessoire
 	 * @param prix
 	 * @param marquesCompatibles
 	 */
-	protected Cordon(String reference, String intitule, double prix, TreeSet<Marque> marquesCompatibles) {
+	public Cordon(String reference, String intitule, double prix, TreeSet<Marque> marquesCompatibles) {
 		super(reference, intitule, prix, marquesCompatibles);
 	}
 
@@ -38,7 +38,7 @@ public class Cordon extends Accessoire
 	}
 
 	// Definition method (process?)
-	protected Article recherche() {
+	public Article recherche(Object object) {
 		// TODO Auto-generated method stub
 		return null;
 	}

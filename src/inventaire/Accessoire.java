@@ -35,7 +35,7 @@ public abstract class Accessoire extends Article
 	 * Getter permettant de connaitre la liste des accessoires
 	 * @return La liste des accessoire - TreeSet<Marque>
 	 */
-	public TreeSet<Marque> getMarquesCompatibles() 
+	protected TreeSet<Marque> getMarquesCompatibles() 
 	{
 		return marquesCompatibles;
 	}
@@ -44,12 +44,15 @@ public abstract class Accessoire extends Article
 	 * Setter permettant de changer la liste des accessoires par la liste marquesCompatibles
 	 * @param marquesCompatibles : TreeSet<Marque> - Liste des accessoires
 	 */
-	public void setMarquesCompatibles(TreeSet<Marque> marquesCompatibles) 
+	protected void setMarquesCompatibles(TreeSet<Marque> marquesCompatibles) 
 	{
 		this.marquesCompatibles = marquesCompatibles;
 	}
 
 	// Définition des méthodes
+	/**
+	 * Méthode permettant d'afficher la liste des articles
+	 */
 	public String toString() 
 	{
 		String result = super.toString() + " est compatible avec les marques suivantes :\n";

@@ -3,7 +3,7 @@
  * 
  * Description de la classe : AllumeCigare
  * 	Classe fille de Chargeur.
- * 	Classe permettant de d�finir les diff�rentes caract�ristiques d'un allume cigare
+ * 	Classe permettant de d�finir les diff�rentes caract�ristiques d'un allume cigare
  */
 
 package inventaire;
@@ -12,30 +12,41 @@ import java.util.TreeSet;
 
 public class AllumeCigare extends Chargeur 
 {	
-	// Definition attributs
+	// Définition attributs
 	
-	// Definition constructeur
+	// Définition constructeur
 	/**
 	 * Constructeur de la classe AllumeCigare
 	 * 
-	 * @param reference
-	 * @param intitule
-	 * @param prix
-	 * @param marquesCompatibles
+	 * @param reference : String - référence d'un article
+	 * @param intitule : String - intitulé d'un article
+	 * @param prix : double - prix d'un article
+	 * @param marquesCompatibles : TreeSet<Marque> - marques associées à l'article
 	 */
-	protected AllumeCigare(String reference, String intitule, double prix, TreeSet<Marque> marquesCompatibles) {
+	public AllumeCigare(String reference, String intitule, double prix, TreeSet<Marque> marquesCompatibles) 
+	{
 		super(reference, intitule, prix, marquesCompatibles);
 	}
 
-	// Definition getter and setter
+	// Définition getter et setter
 	
-	// Definition method (process?)
-	public Article recherche() {
-		// TODO Auto-generated method stub
+	// Définition des méthodes
+	/**
+	 * Méthode permettant de rechercher un article
+	 * @param object : Object - Object recherché
+	 * @return L'article recherché 
+	 */
+	public Article recherche(Object object) 
+	{
 		return null;
 	}
-	
-	public String toString() {
+
+	/**
+	 * Méthode permettant d'afficher les informations de l'allume cigare
+	 */
+	public String toString() 
+	{
 		return "Chargeur allume cigare" + super.toString();
 	}
+
 }

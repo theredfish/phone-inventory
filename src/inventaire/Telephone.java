@@ -3,7 +3,7 @@
  * 
  * Description de la classe : Telephone
  * 	Classe fille de la classe Article.
- * 	Classe permettant de définir les différentes caractéristiques d'un téléphone.
+ * 	Classe permettant de dï¿½finir les diffï¿½rentes caractï¿½ristiques d'un tï¿½lï¿½phone.
  */
 
 package inventaire;
@@ -48,13 +48,11 @@ public class Telephone extends Article
 	}
 
 	// Definition method (process?)
-	public String toString() {
-		return "Téléphone de la marque " + marque + " avec l'opérateur " + operateur + super.toString();
+	public Article recherche(Object object) {
+		return null;
 	}
 
-	@Override
-	protected Article recherche() {
-		// TODO Auto-generated method stub
-		return null;
+	public String toString() {
+		return "TÃ©lÃ©phone de la marque " + marque + " avec l'opÃ©rateur " + operateur + super.toString();
 	}
 }
