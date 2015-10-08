@@ -85,8 +85,15 @@ public class ListeArticles implements Comparable
 	 */
 	public ArrayList<Article> tousLesArticles_ParIntitule(String intitule) 
 	{
-		// TODO - implement ListeArticles.tousLesArticles_ParIntitule
-		throw new UnsupportedOperationException();
+		ArrayList<Article> articleIntitule = new ArrayList<>();
+		
+		for (Article article : articles) 
+		{
+			if (article.getIntitule().equals(intitule))
+				articleIntitule.add(article);
+		}
+		
+		return articleIntitule;
 	}
 
 	/**
@@ -96,8 +103,14 @@ public class ListeArticles implements Comparable
 	 */
 	public ArrayList<Article> tousLesArticles_ParPrix(int prix) 
 	{
-		// TODO - implement ListeArticles.tousLesArticles_ParPrix
-		throw new UnsupportedOperationException();
+		ArrayList<Article> articlePrix = new ArrayList<>();
+		
+		for (Article article : articles) 
+		{
+			if (article.getPrix() == prix)
+				articlePrix.add(article);
+		}
+		
+		return articlePrix;
 	}
-
 }
