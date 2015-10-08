@@ -1,28 +1,28 @@
 /**
- * Auteurs : Marina Blin - Julian Didier
- * 
- * Description de la classe : Accessoire
- * 	Classe fille de la classe Article.
- * 	Classe abstraite permettant de définir les différents caractéristiques d'un accessoire.
+ * @author Marina Blin - Julian Didier
  */
 
 package inventaire;
 
 import java.util.*;
 
+/**
+ * Classe abstraite permettant de définir les différentes caractéristiques d'un accessoire.
+ */
 public abstract class Accessoire extends Article 
 {
-	// Définition attributs
+	/**
+	 * Ensemble de marques compatibles.
+	 */
 	private TreeSet<Marque> marquesCompatibles;
 
-	// Définition constructeur
 	/**
-	 * Constructeur de la classe Accessoire
+	 * Constructeur de la classe Accessoire avec un ensemble de marques
 	 * 
-	 * @param reference : String - référence d'un article
-	 * @param intitule : String - intitulé d'un article
-	 * @param prix : double - prix d'un article
-	 * @param marquesCompatibles : TreeSet<Marque> - marques associées à l'article
+	 * @param String reference : Référence d'un article
+	 * @param String intitule : Intitulé d'un article
+	 * @param double prix : Prix d'un article
+	 * @param TreeSet<Marque> marquesCompatibles : Marques compatibles associées l'article
 	 */
 	protected Accessoire(String reference, String intitule, double prix, TreeSet<Marque> marquesCompatibles) 
 	{
@@ -30,10 +30,23 @@ public abstract class Accessoire extends Article
 		this.marquesCompatibles = marquesCompatibles;
 	}
 	
-	// Définition getter and setter
 	/**
-	 * Getter permettant de connaitre la liste des accessoires
-	 * @return La liste des accessoire - TreeSet<Marque>
+	 * Constructeur de la classe Accessoire sans ensemble de marques
+	 *
+	 * @param String reference : Référence d'un article
+	 * @param String intitule : Intitulé d'un article
+	 * @param double prix : Prix d'un article
+	 */
+	protected Accessoire(String reference, String intitule, double prix) 
+	{
+		super(reference, intitule, prix);
+		this.marquesCompatibles = new TreeSet<Marque>();
+	}
+	
+	/**
+	 * Getter permettant de récupérer l'ensemble des accessoires
+	 * 
+	 * @return TreeSet<Marque> L'ensemble des accessoires
 	 */
 	public TreeSet<Marque> getMarquesCompatibles() 
 	{
@@ -41,7 +54,8 @@ public abstract class Accessoire extends Article
 	}
 
 	/**
-	 * Setter permettant de changer la liste des accessoires par la liste marquesCompatibles
+	 * Setter permettant de définir l'ensemble des accessoires
+	 * 
 	 * @param marquesCompatibles : TreeSet<Marque> - Liste des accessoires
 	 */
 	public void setMarquesCompatibles(TreeSet<Marque> marquesCompatibles) 
@@ -49,7 +63,10 @@ public abstract class Accessoire extends Article
 		this.marquesCompatibles = marquesCompatibles;
 	}
 
-	// Définition des méthodes
+	/**
+	 * Redéfinition de la méthode toString
+	 * Affiche l'ensemble des marques compatibles pour l'accessoire
+	 */
 	public String toString() 
 	{
 		String result = super.toString() + " est compatible avec les marques suivantes :\n";
