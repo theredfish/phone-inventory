@@ -20,6 +20,6 @@ public class CompareArticleRef {
 	 */
 	public int compare(Article a1, Article a2) 
 	{
-		return a1.getIntitule().compareToIgnoreCase(a2.getIntitule());
+		return a1.getReference().compareToIgnoreCase(a2.getReference());
 	}
 }
