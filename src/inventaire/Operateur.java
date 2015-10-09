@@ -1,22 +1,24 @@
 /**
- * Auteurs : Marina Blin - Julian Didier
- * 
- * Description de la classe : Opérateur
- * 	Classe permettant de définir les différentes caractéristiques d'un opérateur.
+ * @author Marina Blin - Julian Didier
+ * @version 1.0.0
  */
 
 package inventaire;
 
+ /**
+  * 	Classe permettant de dÃ©finir les diffÃ©rentes caractÃ©ristiques d'un opÃ©rateur.
+  */
 public class Operateur 
 {
-	// Definition attributs
+	/**
+	 * String nom : Le nom de l'opÃ©rateur
+	 */
 	private String nom;
 
-	// Definition constructeur
 	/**
 	 * Constructeur de la classe Operateur
 	 * 
-	 * @param nom
+	 * @param String nom : Le nom de l'opÃ©rateur
 	 */
 	public Operateur(String nom) {
 		this.nom = nom;		

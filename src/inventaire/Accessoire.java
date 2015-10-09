@@ -66,7 +66,7 @@ public abstract class Accessoire extends Article
 
 	/**
 	 * Redéfinition de la méthode toString
-	 * Affiche l'ensemble des marques compatibles pour l'accessoire
+	 * @return Affiche l'ensemble des marques compatibles pour l'accessoire
 	 */
 	public String toString() 
 	{
