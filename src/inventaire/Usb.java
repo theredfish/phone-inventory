@@ -1,41 +1,36 @@
 /**
- * Auteurs : Marina Blin - Julian Didier
- * 
- * Description de la classe : Usb
- * 	Classe fille de la classe Chargeur
- * 	Classe permettant d'avoir les diff�rentes caract�ritiques d'un chargeur USB
+ * @author Marina Blin - Julian Didier
+ * @version 1.0.0
  */
 
 package inventaire;
 
 import java.util.TreeSet;
 
+/**
+ * 	Classe permettant d'avoir les différentes caractéritiques d'un chargeur USB
+ */
 public class Usb extends Chargeur 
 {
-	// Definition attributs
-	
-	// Definition constructeur
 	/**
 	 * Constructeur de la classe Usb
 	 * 
-	 * @param reference
-	 * @param intitule
-	 * @param prix
-	 * @param marquesCompatibles
+	 * @param String reference : La reference d'un article
+	 * @param String intitule : L'intitule d'un article
+	 * @param double prix : Le prix d'un article
+	 * @param TreeSet<Marque> marquesCompatibles : Les marques associées à l'article
 	 */
-	public Usb(String reference, String intitule, double prix, TreeSet<Marque> marquesCompatibles) {
+	public Usb(String reference, String intitule, double prix, TreeSet<Marque> marquesCompatibles) 
+	{
 		super(reference, intitule, prix, marquesCompatibles);
 	}
 	
-	// Definition getter and setter
-
-	// Definition method (process?)
-	public Article recherche(Object object) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	public String toString() {
+	/**
+	 * Méthode permettant d'afficher les informations du chargeur USB
+	 * @return String
+	 */
+	public String toString() 
+	{
 		return "Chargeur secteur " + super.toString();
 	}
 }

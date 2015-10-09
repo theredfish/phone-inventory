@@ -19,10 +19,10 @@ public class Coque extends Accessoire
 
 	/**
 	 * Constructeur de la classe Coque
-	 * cordon
-	 * @param String reference : La reference d'une coque
-	 * @param String intitule : L'intitule d'une coque
-	 * @param double prix : Le prix d'une coque
+	 * 
+	 * @param String reference : La référence de la coque
+	 * @param String intitule : L'intitulé de la coque
+	 * @param double prix : Le prix de la coque
 	 * @param TreeSet<Marque> marquesCompatibles : Les marques associées à la coque
 	 * @param Couleur couleur : La couleur de la coque
 	 */
@@ -49,6 +49,7 @@ public class Coque extends Accessoire
 	/**
 	 * Redéfinition de la méthode toString
 	 * Méthode permettant d'afficher les informations de la coque
+	 * @return String
 	 */
 	public String toString() 
 	{

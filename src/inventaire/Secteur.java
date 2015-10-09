@@ -41,8 +41,11 @@ public class Secteur extends Chargeur
 	/**
 	 * Redéfinition de la méthode toString
 	 * Affiche les informations d'un chargeur secteur
+	 * 
+	 * @return String
 	 */
-	public String toString() {
+	public String toString() 
+	{
 		return "Chargeur secteur " + super.toString();
 	}
 }

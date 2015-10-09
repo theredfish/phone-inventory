@@ -39,6 +39,7 @@ public abstract class Article
 	
 	/**
 	 * Getter permettant de connaitre la référence d'un article
+	 * 
 	 * @return String reference
 	 */
 	protected String getReference() 
@@ -48,6 +49,7 @@ public abstract class Article
 
 	/**
 	 * Setter permettant de changer la référence d'un article
+	 * 
 	 * @param String reference La référence de l'article
 	 */
 	protected void setReference(String reference) 
@@ -57,6 +59,7 @@ public abstract class Article
 
 	/**
 	 * Getter permettant de connaitre l'intitulé d'un article
+	 * 
 	 * @return String intitule
 	 */
 	protected String getIntitule() 
@@ -66,6 +69,7 @@ public abstract class Article
 
 	/**
 	 * Setter permettant de changer l'intitulé d'un article
+	 * 
 	 * @param String reference L'intitulé de l'article
 	 */
 	protected void setIntitule(String intitule) 
@@ -75,6 +79,7 @@ public abstract class Article
 
 	/**
 	 * Getter permettant de connaitre le prix d'un article
+	 * 
 	 * @return int prix
 	 */
 	protected double getPrix() 
@@ -84,6 +89,7 @@ public abstract class Article
 
 	/**
 	 * Setter permettant de changer le prix d'un article
+	 * 
 	 * @param int reference Le prix de l'article
 	 */
 	protected void setPrix(double prix) 
