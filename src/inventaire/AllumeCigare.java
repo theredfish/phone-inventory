@@ -1,47 +1,44 @@
 /**
- * Auteurs : Marina Blin - Julian Didier
- * 
- * Description de la classe : AllumeCigare
- * 	Classe fille de Chargeur.
- * 	Classe permettant de d�finir les diff�rentes caract�ristiques d'un allume cigare
+ * @author Marina Blin - Julian Didier
+ * @version 1.0.0
  */
 
 package inventaire;
 
 import java.util.TreeSet;
 
+/**
+ * Classe permettant de définir les différentes caractéristiques d'un allume cigare
+ */
 public class AllumeCigare extends Chargeur 
 {	
-	// Définition attributs
-	
-	// Définition constructeur
 	/**
 	 * Constructeur de la classe AllumeCigare
 	 * 
-	 * @param reference : String - référence d'un article
-	 * @param intitule : String - intitulé d'un article
-	 * @param prix : double - prix d'un article
-	 * @param marquesCompatibles : TreeSet<Marque> - marques associées à l'article
+	 * @param String reference : La référence d'un allume cigare
+	 * @param String intitule : L'intitulé d'un allume cigare
+	 * @param double prix : Le prix d'un allume cigare
+	 * @param TreeSet<Marque> marquesCompatibles : Les marques associées à l'allume cigare
 	 */
 	public AllumeCigare(String reference, String intitule, double prix, TreeSet<Marque> marquesCompatibles) 
 	{
 		super(reference, intitule, prix, marquesCompatibles);
 	}
-
-	// Définition getter et setter
 	
-	// Définition des méthodes
 	/**
-	 * Méthode permettant de rechercher un article
-	 * @param object : Object - Object recherché
-	 * @return L'article recherché 
+	 * Constructeur de la classe AllumeCigare sans marques compatibles à l'initialisation
+	 * 
+	 * @param String reference : La référence d'un allume cigare
+	 * @param String intitule : L'intitulé d'un allume cigare
+	 * @param double prix : Le prix d'un allume cigare
 	 */
-	public Article recherche(Object object) 
+	public AllumeCigare(String reference, String intitule, double prix) 
 	{
-		return null;
+		super(reference, intitule, prix);
 	}
 
 	/**
+	 * Redéfinition de la méthode toString
 	 * Méthode permettant d'afficher les informations de l'allume cigare
 	 */
 	public String toString() 

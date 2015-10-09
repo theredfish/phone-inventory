@@ -1,40 +1,47 @@
 /**
- * Auteurs : Marina Blin - Julian Didier
- * 
- * Description de la classe : Secteur
- * 	Classe fille de la classe Chargeur
- * 	Classe permettant de d�finir les caract�ristiques d'un chargeur secteur
+ * @author Marina Blin - Julian Didier
+ * @version 1.0.0
  */
 
 package inventaire;
 
 import java.util.TreeSet;
 
+/**
+ * Classe permettant de définir les caractéristiques d'un chargeur secteur
+ */
 public class Secteur extends Chargeur 
 {
-	// Definition attributs
-	
-	// Definition constructeur
 	/**
 	 * Constructeur de la classe Secteur
 	 * 
-	 * @param reference
-	 * @param intitule
-	 * @param prix
-	 * @param marquesCompatibles
+	 * @param String reference : La référence d'un chargeur secteur
+	 * @param String intitule : L'intitulé d'un chargeur secteur
+	 * @param double prix : Le prix d'un chargeur secteur
+	 * @param TreeSet<Marque> marquesCompatibles : Les marques associées au chargeur secteur
 	 */
-	public Secteur(String reference, String intitule, double prix, TreeSet<Marque> marquesCompatibles) {
+	public Secteur(String reference, String intitule, double prix, TreeSet<Marque> marquesCompatibles) 
+	{
 		super(reference, intitule, prix, marquesCompatibles);
 	}
-
-	// Definition getter and setter
 	
-	// Definition method (process?)
-	public Article recherche(Object object) {
-		// TODO Auto-generated method stub
-		return null;
+	/**
+	 * Constructeur de la classe Secteur sans initialisation des marques compatibles
+	 * 
+	 * @param String reference : La référence d'un chargeur secteur
+	 * @param String intitule : L'intitulé d'un chargeur secteur
+	 * @param double prix : Le prix d'un chargeur secteur
+	 */
+	public Secteur(String reference, String intitule, double prix) 
+	{
+		super(reference, intitule, prix);
+		this.marquesCompatibles = new TreeSet<Marque>();
 	}
-	
+
+	/**
+	 * Redéfinition de la méthode toString
+	 * Affiche les informations d'un chargeur secteur
+	 */
 	public String toString() {
 		return "Chargeur secteur " + super.toString();
 	}

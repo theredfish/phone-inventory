@@ -1,5 +1,6 @@
 /**
  * @author Marina Blin - Julian Didier
+ * @version 1.0.0
  */
 
 package inventaire;
@@ -14,7 +15,7 @@ public abstract class Accessoire extends Article
 	/**
 	 * Ensemble de marques compatibles.
 	 */
-	private TreeSet<Marque> marquesCompatibles;
+	protected TreeSet<Marque> marquesCompatibles;
 
 	/**
 	 * Constructeur de la classe Accessoire avec un ensemble de marques
