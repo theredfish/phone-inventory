@@ -100,23 +100,6 @@ public abstract class Article
 	}
 	
 	/**
-	 * Redéfinition de la méthode equals
-	 * Comparaison d'égalité sur l'intitulé, la référence et le prix
-	 */
-	public boolean equals(Object o)
-	{
-		if (o instanceof Article) {
-			Article article = (Article) o;
-			
-			return (article.intitule.equalsIgnoreCase(this.intitule)
-					&& article.reference.equalsIgnoreCase(this.reference)
-					&& article.prix == this.prix);
-		} else {
-			return super.equals(o);
-		}
-	}
-
-	/**
 	 * Méthode permettant d'afficher les informations de l'article
 	 * 
 	 * @return Affichage des informations de l'article
