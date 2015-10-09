@@ -12,7 +12,7 @@ import java.util.*;
 /** 
  * 	Classe permettant d'avoir une liste d'article
  */
-public class ListeArticles implements Comparable 
+public class ListeArticles
 {
 	/**
 	 * ArrayList Liste des articles
