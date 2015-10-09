@@ -34,7 +34,8 @@ public class Coque extends Accessoire
 
 	/**
 	 * Méthode permettant d'afficher les informations de la coque
-	 * @return String
+	 * 
+	 * @return Affichage des informations de la coque
 	 */
 	public String toString() 
 	{
