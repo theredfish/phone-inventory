@@ -41,7 +41,7 @@ public class ListeArticles
 	 * Méthode permettant d'ajouter un article à la liste
 	 * 
 	 * @param Article article Article que l'on souhaite ajouter à la liste
-	 * @return Boolean True si l'article à bien été ajouté sinon False
+	 * @return boollean True si l'article à bien été ajouté sinon False
 	 */
 	public boolean ajouter(Article article) 
 	{
@@ -56,9 +56,29 @@ public class ListeArticles
 	 */
 	public boolean supprimer(Article article) 
 	{
-		if (articles.contains(article))
-			return articles.remove(article);
-		return false;
+		return articles.remove(article);		
+	}
+	
+	/**
+	 * Méthode permettant d'obtenir la taille de la liste des articles
+	 * 
+	 * @return int
+	 */
+	public int getTaille()
+	{
+		return this.articles.size();
+	}
+	
+	/**
+	 * Méthode permettant de tester si un élément est présent
+	 * dans la liste des articles.
+	 * 
+	 * @param article
+	 * @return boolean True si l'article à bien été ajouté sinon False
+	 */
+	public boolean contient(Article article)
+	{
+		return articles.contains(article);
 	}
 
 	/**
@@ -120,5 +140,15 @@ public class ListeArticles
 		}
 		
 		return articlePrix;
+	}
+	
+	/**
+	 * Redéfinition de la méthode equals
+	 * 
+	 * @return
+	 */
+	public boolean equals()
+	{
+		
 	}
 }

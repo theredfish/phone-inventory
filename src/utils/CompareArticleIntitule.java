@@ -22,6 +22,24 @@ public class CompareArticleIntitule implements Comparator<Article>
 	 */
 	public int compare(Article a1, Article a2) 
 	{
-		return a1.getIntitule().compareToIgnoreCase(a2.getIntitule());
+		// On trie selon l'intitulé, mais si égaux aussi par prix
+		// et si prix égaux également par référence
+		
+		int intitule_res = 0;
+		int prix_res = 0;
+		
+		intitule_res = a1.getIntitule().compareToIgnoreCase(a2.getIntitule());
+		
+		if (intitule_res == 0) {
+			prix_res = Double.compare(a1.getPrix(), a2.getPrix());
+			
+			if (prix_res == 0) {
+				return a1.getReference().compareTo(a1.getReference());
+			}
+			
+			return prix_res;
+		}
+		
+		return intitule_res;
 	}
 }

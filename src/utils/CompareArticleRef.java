@@ -20,6 +20,7 @@ public class CompareArticleRef {
 	 */
 	public int compare(Article a1, Article a2) 
 	{
+		// Les références ont un unique identifieur (UUID)
 		return a1.getReference().compareToIgnoreCase(a2.getReference());
 	}
 }
