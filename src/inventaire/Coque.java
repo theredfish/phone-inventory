@@ -20,28 +20,26 @@ public class Coque extends Accessoire
 	/**
 	 * Constructeur de la classe Coque
 	 * 
-	 * @param String reference : La référence de la coque
 	 * @param String intitule : L'intitulé de la coque
 	 * @param double prix : Le prix de la coque
 	 * @param TreeSet<Marque> marquesCompatibles : Les marques associées à la coque
 	 * @param Couleur couleur : La couleur de la coque
 	 */
-	public Coque(String reference, String intitule, double prix, TreeSet<Marque> marquesCompatibles, Couleur couleur) 
+	public Coque(String intitule, double prix, TreeSet<Marque> marquesCompatibles, Couleur couleur) 
 	{
-		super(reference, intitule, prix, marquesCompatibles);
+		super(intitule, prix, marquesCompatibles);
 		this.couleur = couleur;
 	}
 	
 	/**
 	 * Constructeur de la classe Coque sans marques compatibles à l'initialisation
 	 * 
-	 * @param String reference : La référence d'un article
 	 * @param String intitule : L'intitulé d'un article
 	 * @param double prix : Le prix d'un article
 	 */
-	protected Coque(String reference, String intitule, double prix, Couleur couleur) 
+	protected Coque(String intitule, double prix, Couleur couleur) 
 	{
-		super(reference, intitule, prix);
+		super(intitule, prix);
 		this.couleur = couleur;
 		this.marquesCompatibles = new TreeSet<Marque>();
 	}

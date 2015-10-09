@@ -20,27 +20,25 @@ public abstract class Accessoire extends Article
 	/**
 	 * Constructeur de la classe Accessoire avec un ensemble de marques
 	 * 
-	 * @param String reference : Référence d'un article
 	 * @param String intitule : Intitulé d'un article
 	 * @param double prix : Prix d'un article
 	 * @param TreeSet<Marque> marquesCompatibles : Marques compatibles associées l'article
 	 */
-	protected Accessoire(String reference, String intitule, double prix, TreeSet<Marque> marquesCompatibles) 
+	protected Accessoire(String intitule, double prix, TreeSet<Marque> marquesCompatibles) 
 	{
-		super(reference, intitule, prix);
+		super(intitule, prix);
 		this.marquesCompatibles = marquesCompatibles;
 	}
 	
 	/**
 	 * Constructeur de la classe Accessoire sans ensemble de marques
 	 *
-	 * @param String reference : Référence d'un article
 	 * @param String intitule : Intitulé d'un article
 	 * @param double prix : Prix d'un article
 	 */
-	protected Accessoire(String reference, String intitule, double prix) 
+	protected Accessoire(String intitule, double prix) 
 	{
-		super(reference, intitule, prix);
+		super(intitule, prix);
 		this.marquesCompatibles = new TreeSet<Marque>();
 	}
 	

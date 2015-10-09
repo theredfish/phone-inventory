@@ -15,14 +15,13 @@ public class Usb extends Chargeur
 	/**
 	 * Constructeur de la classe Usb
 	 * 
-	 * @param String reference : La reference d'un article
 	 * @param String intitule : L'intitule d'un article
 	 * @param double prix : Le prix d'un article
 	 * @param TreeSet<Marque> marquesCompatibles : Les marques associées à l'article
 	 */
-	public Usb(String reference, String intitule, double prix, TreeSet<Marque> marquesCompatibles) 
+	public Usb(String intitule, double prix, TreeSet<Marque> marquesCompatibles) 
 	{
-		super(reference, intitule, prix, marquesCompatibles);
+		super(intitule, prix, marquesCompatibles);
 	}
 	
 	/**

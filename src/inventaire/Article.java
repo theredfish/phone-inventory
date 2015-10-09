@@ -5,6 +5,8 @@
 
 package inventaire;
 
+import java.util.UUID;
+
 /**
  * 	Classe abstraite permettant de définir les différentes caractéristiques d'un article
  */
@@ -13,15 +15,15 @@ public abstract class Article
 	/**
 	 * String La reference d'un article
 	 */
-	private String reference;
+	protected String reference;
 	/**
 	 * String L'intitule d'un article
 	 */
-	private String intitule;
+	protected String intitule;
 	/**
 	 * Double Le prix d'un article
 	 */
-	private double prix;
+	protected double prix;
 	
 	/**
 	 * Constructeur de la classe Article
@@ -30,9 +32,9 @@ public abstract class Article
 	 * @param String intitule : L'intitule d'un article
 	 * @param double prix : Le prix d'un article
 	 */
-	protected Article(String reference, String intitule, double prix) 
+	protected Article(String intitule, double prix) 
 	{
-		this.reference = reference;
+		this.generateUuidReference();
 		this.intitule = intitule;
 		this.prix = prix;
 	}
@@ -42,7 +44,7 @@ public abstract class Article
 	 * 
 	 * @return String reference
 	 */
-	protected String getReference() 
+	public String getReference() 
 	{
 		return reference;
 	}
@@ -52,9 +54,9 @@ public abstract class Article
 	 * 
 	 * @param String reference La référence de l'article
 	 */
-	protected void setReference(String reference) 
+	public void generateUuidReference() 
 	{
-		this.reference = reference;
+		this.reference = UUID.randomUUID().toString();
 	}
 
 	/**
@@ -62,7 +64,7 @@ public abstract class Article
 	 * 
 	 * @return String intitule
 	 */
-	protected String getIntitule() 
+	public String getIntitule() 
 	{
 		return this.intitule;
 	}
@@ -72,7 +74,7 @@ public abstract class Article
 	 * 
 	 * @param String reference L'intitulé de l'article
 	 */
-	protected void setIntitule(String intitule) 
+	public void setIntitule(String intitule) 
 	{
 		this.intitule = intitule;
 	}
@@ -82,7 +84,7 @@ public abstract class Article
 	 * 
 	 * @return int prix
 	 */
-	protected double getPrix() 
+	public double getPrix() 
 	{
 		return this.prix;
 	}
@@ -92,9 +94,26 @@ public abstract class Article
 	 * 
 	 * @param int reference Le prix de l'article
 	 */
-	protected void setPrix(double prix) 
+	public void setPrix(double prix) 
 	{
 		this.prix = prix;
+	}
+	
+	/**
+	 * Redéfinition de la méthode equals
+	 * Comparaison d'égalité sur l'intitulé, la référence et le prix
+	 */
+	public boolean equals(Object o)
+	{
+		if (o instanceof Article) {
+			Article article = (Article) o;
+			
+			return (article.intitule.equalsIgnoreCase(this.intitule)
+					&& article.reference.equalsIgnoreCase(this.reference)
+					&& article.prix == this.prix);
+		} else {
+			return super.equals(o);
+		}
 	}
 
 	/**

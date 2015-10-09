@@ -22,15 +22,14 @@ public class Telephone extends Article
 	/**
 	 * Constructeur de la classe Telephone
 	 * 
-	 * @param String reference : La reference du téléphone
 	 * @param String intitule : L'intitule du téléphone
 	 * @param double prix : Le prix du téléphone
 	 * @param Marque marque : La marque du téléphone
 	 * @param Operateur operateur : L'opérateur du téléphone
 	 */
-	public Telephone(String reference, String intitule, double prix, Marque marque, Operateur operateur) 
+	public Telephone(String intitule, double prix, Marque marque, Operateur operateur) 
 	{
-		super(reference, intitule, prix);
+		super(intitule, prix);
 		this.marque = marque;
 		this.operateur = operateur;
 	}

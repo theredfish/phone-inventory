@@ -15,14 +15,13 @@ public class Secteur extends Chargeur
 	/**
 	 * Constructeur de la classe Secteur
 	 * 
-	 * @param String reference : La référence d'un chargeur secteur
 	 * @param String intitule : L'intitulé d'un chargeur secteur
 	 * @param double prix : Le prix d'un chargeur secteur
 	 * @param TreeSet<Marque> marquesCompatibles : Les marques associées au chargeur secteur
 	 */
-	public Secteur(String reference, String intitule, double prix, TreeSet<Marque> marquesCompatibles) 
+	public Secteur(String intitule, double prix, TreeSet<Marque> marquesCompatibles) 
 	{
-		super(reference, intitule, prix, marquesCompatibles);
+		super(intitule, prix, marquesCompatibles);
 	}
 	
 	/**
@@ -32,9 +31,9 @@ public class Secteur extends Chargeur
 	 * @param String intitule : L'intitulé d'un chargeur secteur
 	 * @param double prix : Le prix d'un chargeur secteur
 	 */
-	public Secteur(String reference, String intitule, double prix) 
+	public Secteur(String intitule, double prix) 
 	{
-		super(reference, intitule, prix);
+		super(intitule, prix);
 		this.marquesCompatibles = new TreeSet<Marque>();
 	}
 

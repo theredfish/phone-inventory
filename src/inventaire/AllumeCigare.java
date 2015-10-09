@@ -15,26 +15,24 @@ public class AllumeCigare extends Chargeur
 	/**
 	 * Constructeur de la classe AllumeCigare
 	 * 
-	 * @param String reference : La référence d'un allume cigare
 	 * @param String intitule : L'intitulé d'un allume cigare
 	 * @param double prix : Le prix d'un allume cigare
 	 * @param TreeSet<Marque> marquesCompatibles : Les marques associées à l'allume cigare
 	 */
-	public AllumeCigare(String reference, String intitule, double prix, TreeSet<Marque> marquesCompatibles) 
+	public AllumeCigare(String intitule, double prix, TreeSet<Marque> marquesCompatibles) 
 	{
-		super(reference, intitule, prix, marquesCompatibles);
+		super(intitule, prix, marquesCompatibles);
 	}
 	
 	/**
 	 * Constructeur de la classe AllumeCigare sans marques compatibles à l'initialisation
 	 * 
-	 * @param String reference : La référence d'un allume cigare
 	 * @param String intitule : L'intitulé d'un allume cigare
 	 * @param double prix : Le prix d'un allume cigare
 	 */
-	public AllumeCigare(String reference, String intitule, double prix) 
+	public AllumeCigare(String intitule, double prix) 
 	{
-		super(reference, intitule, prix);
+		super(intitule, prix);
 	}
 
 	/**
