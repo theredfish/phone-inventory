@@ -99,6 +99,8 @@ public abstract class Article
 
 	/**
 	 * Méthode permettant d'afficher les informations de l'article
+	 * 
+	 * @return Affichage des informations de l'article
 	 */
 	public String toString() {
 		return " a pour référence '" + reference + "' porte l'intitulé " + intitule + " a pour prix " + prix + " euros";
