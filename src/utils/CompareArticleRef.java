@@ -5,12 +5,14 @@
 
 package utils;
 
+import java.util.Comparator;
+
 import inventaire.Article;
 
 /**
  * Classe de comparaison des articles par référence
  */
-public class CompareArticleRef {
+public class CompareArticleRef implements Comparator<Article> {
 	
 	/**
 	 * Comparaison des articles selon leur référence
