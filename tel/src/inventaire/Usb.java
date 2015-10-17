@@ -24,6 +24,11 @@ public class Usb extends Chargeur
 		super(intitule, prix, marquesCompatibles);
 	}
 	
+	public Usb(String intitule, double prix) 
+	{
+		super(intitule, prix);
+	}
+	
 	/**
 	 * Méthode permettant d'afficher les informations du chargeur USB
 	 * @return String
