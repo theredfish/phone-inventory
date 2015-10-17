@@ -147,8 +147,8 @@ public class ListeArticles
 	 * 
 	 * @return
 	 */
-	public boolean equals()
-	{
-		
-	}
+//	public boolean equals()
+//	{
+//		
+//	}
 }

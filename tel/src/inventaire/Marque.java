@@ -8,7 +8,7 @@ package inventaire;
 /**
  * 	Classe permettant de définir les différentes caractéristiques d'une marque.
  */
-public class Marque 
+public class Marque implements Comparable
 {
 	/**
 	 * String le nom d'une marque
@@ -45,6 +45,11 @@ public class Marque
 		this.nom = nom;
 	}
 
+	@Override
+	public int compareTo(Object marque) {
+        return nom.compareTo(((Marque) marque).nom);
+    }
+
 	/**
 	 * Redéfinition de la méthode toString
 	 * @return Affiche le nom de la marque
@@ -53,4 +58,5 @@ public class Marque
 	{
 		return nom;
 	}
+
 }
