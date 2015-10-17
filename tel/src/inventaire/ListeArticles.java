@@ -181,7 +181,7 @@ public class ListeArticles
 		
 		for (Article article : articles) 
 		{
-			res += article.toString();
+			res += article.toString() + "\n";
 		}
 		return res;
 	}
