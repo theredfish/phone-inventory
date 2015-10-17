@@ -423,6 +423,7 @@ public class Magasin {
 								break;
 						}
 					}
+					menu = 0;
 					break;
 				case 2:
 					System.out.println("Quelle est la référence de l'article à supprimer ?");
@@ -472,36 +473,46 @@ public class Magasin {
 						aSupprimer = new Usb(intitule, prix);
 						listeArticles.supprimer(aSupprimer);
 					}
-			
+					menu = 0;
 					break;
 				case 3:
-					listeArticles.tousLesArticles_ParRef();
+					System.out.println(listeArticles.tousLesArticles_ParRef());
+					menu = 0;
 					break;
 				case 4:
-					listeArticles.tousLesArticles_ParIntitule();
+					System.out.println(listeArticles.tousLesArticles_ParIntitule());
+					menu = 0;
 					break;
 				case 5:
-					listeArticles.tousLesArticles_ParPrix();
+					System.out.println(listeArticles.tousLesArticles_ParPrix());
+					menu = 0;
 					break;
 				case 6:
 					System.out.println("Quelle référence recherchez-vous ?");
 					reference = sc.next();
-					listeArticles.chercherArticlesReference(reference);
+					System.out.println(listeArticles.chercherArticlesReference(reference));
+					menu = 0;
 					break;
 				case 7:
 					System.out.println("Quel intitulé recherchez-vous ?");
 					reference = sc.next();
-					listeArticles.chercherArticlesIntitule(intitule);
+					System.out.println(listeArticles.chercherArticlesIntitule(intitule));
+					menu = 0;
 					break;
 				case 8:
 					System.out.println("Quel prix recherchez-vous ?");
 					reference = sc.next();
-					listeArticles.chercherArticlesPrix(prix);
+					System.out.println(listeArticles.chercherArticlesPrix(prix));
+					menu = 0;
 					break;
 				case 9:
 					listeArticles.sauvegarde();
 					System.out.println("La sauvegarde a bien été effectué");
-					
+					menu = 0;
+					break;
+				case 10:
+					System.out.println(listeArticles.toString());
+					menu = 0;
 					break;
 		
 				default:
