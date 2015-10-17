@@ -41,36 +41,39 @@ public class Magasin {
 		String couleurS;
 		Couleur couleur = Couleur.Noir;
 		
+		String reference = "";
+		
 		while (menu != -1) 
 		{
 			switch (menu) 
 			{
 				case 0:
-					System.out.println("╔═══════════════════════════ Menu ══════════════════════════════╗");
-					System.out.println("║1) Ajouter un article à la liste d'article                     ║");
-					System.out.println("║2) Supprimer un article de la liste d'article                  ║");
-					System.out.println("║3) Trier les articles de la liste d'article par référence      ║");
-					System.out.println("║4) Trier les articles de la liste d'article par intitulé       ║");
-					System.out.println("║5) Trier les articles de la liste d'article par prix           ║");
-					System.out.println("║6) Rechercher un article à la liste d'article par sa référence ║");
-					System.out.println("║7) Rechercher un article à la liste d'article par son intitulé ║");
-					System.out.println("║8) Rechercher un article à la liste d'article par son prix     ║");
-					System.out.println("║9) Sauvegarder la liste d'article                              ║");
-					System.out.println("║-1) Quitter l'application                                      ║");
-					System.out.println("╚═══════════════════════════════════════════════════════════════╝");
+					System.out.println("╔══ Menu ════════════════════════════════════════════════════════╗");
+					System.out.println("║1) Ajouter un article à la liste d'articles                     ║");
+					System.out.println("║2) Supprimer un article de la liste d'articles                  ║");
+					System.out.println("║3) Trier les articles de la liste d'articles par référence      ║");
+					System.out.println("║4) Trier les articles de la liste d'articles par intitulé       ║");
+					System.out.println("║5) Trier les articles de la liste d'articles par prix           ║");
+					System.out.println("║6) Rechercher un article à la liste d'articles par sa référence ║");
+					System.out.println("║7) Rechercher un article à la liste d'articles par son intitulé ║");
+					System.out.println("║8) Rechercher un article à la liste d'articles par son prix     ║");
+					System.out.println("║9) Sauvegarder la liste d'articles                              ║");
+					System.out.println("║10) Afficher la liste d'articles                                ║");
+					System.out.println("║-1) Quitter l'application                                       ║");
+					System.out.println("╚════════════════════════════════════════════════════════════════╝");
 					
 					System.out.println("Que souhaitez-vous faire ?");
 					menu = sc.nextInt();
 					break;
 			
 				case 1:
-					System.out.println("╔═══════════════════════ Menu Ajout ═══════════════════════╗");
-					System.out.println("║1) Ajouter un Téléphone                                   ║");
-					System.out.println("║2) Ajouter un Accessoire                                  ║");
-					System.out.println("║3) Revenir au menu principal                              ║");
-					System.out.println("║4) Sauvegarder la liste d'article                         ║");
-					System.out.println("║-1) Quitter l'application                                 ║");
-					System.out.println("╚══════════════════════════════════════════════════════════╝");
+					System.out.println("╔══ Menu Ajout ══════════════════════════════════════════════════╗");
+					System.out.println("║1) Ajouter un Téléphone                                         ║");
+					System.out.println("║2) Ajouter un Accessoire                                        ║");
+					System.out.println("║3) Revenir au menu principal                                    ║");
+					System.out.println("║4) Sauvegarder la liste d'articles                              ║");
+					System.out.println("║-1) Quitter l'application                                       ║");
+					System.out.println("╚════════════════════════════════════════════════════════════════╝");
 					
 					System.out.println("Que souhaitez-vous faire ?");
 					sousMenu = sc.nextInt();
@@ -115,15 +118,15 @@ public class Magasin {
 								break;
 	
 							case 2:
-								System.out.println("╔════════════════ Menu ajout Accessoire ════════════════╗");
-								System.out.println("║1) Ajouter un Cordon                                   ║");
-								System.out.println("║2) Ajouter un Chargeur                                 ║");
-								System.out.println("║3) Ajouter une Coque                                   ║");
-								System.out.println("║4) Revenir au menu précédent                           ║");
-								System.out.println("║5) Revenir au menu principal                           ║");
-								System.out.println("║6) Sauvegarder la liste d'article                      ║");
-								System.out.println("║-1) Quitter l'application                              ║");
-								System.out.println("╚═══════════════════════════════════════════════════════╝");
+								System.out.println("╔══ Menu ajout Accessoire ═══════════════════════════════════════╗");
+								System.out.println("║1) Ajouter un Cordon                                            ║");
+								System.out.println("║2) Ajouter un Chargeur                                          ║");
+								System.out.println("║3) Ajouter une Coque                                            ║");
+								System.out.println("║4) Revenir au menu précédent                                    ║");
+								System.out.println("║5) Revenir au menu principal                                    ║");
+								System.out.println("║6) Sauvegarder la liste d'article                               ║");
+								System.out.println("║-1) Quitter l'application                                       ║");
+								System.out.println("╚════════════════════════════════════════════════════════════════╝");
 								
 								System.out.println("Que souhaitez-vous faire ?");
 								sousSousMenu = sc.nextInt();
@@ -177,7 +180,7 @@ public class Magasin {
 											menu = 0;
 											break;				
 										case 2:
-											System.out.println("╔════════════════ Menu ajout accessoire Chargeur ════════════════╗");
+											System.out.println("╔══ Menu ajout accessoire Chargeur ══════════════════════════════╗");
 											System.out.println("║1) Ajouter un chargeur USB                                      ║");
 											System.out.println("║2) Ajouter un chargeur Allume cigare                            ║");
 											System.out.println("║3) Ajouter une chargeur Secteur                                 ║");
@@ -192,32 +195,115 @@ public class Magasin {
 											
 											if (sousSousSousMenu == 4) 
 											{
-												menu = 1;
-												sousMenu = 2;
+												// to do
 											}
 											else if (sousSousSousMenu == 5)
 											{
 												menu = 0;
 											}
-											else if (sousSousSousMenu == -1)
-											{
-												menu = -1;
-											}
 											else if (sousSousSousMenu == 6)
 											{
 												menu = 4;
+											}
+											else if (sousSousSousMenu == -1)
+											{
+												menu = -1;
 											}
 											else 
 											{
 												switch (sousSousMenu) 
 												{
 													case 1:
+														System.out.println("Quel est l'intitulé du chargeur USB ?");
+														intitule = sc.next();
+														System.out.println("Quel est le prix du chargeur USB ?");
+														prix = sc.nextDouble();
+														System.out.println("Quelles sont les marques compatibles du chargeur USB ? (Rentrer une marque. Appuyer sur entrée. Faire -1 pour terminer la saisie");
+														marquesCompatibles = new TreeSet<>();
+														
+														saisie = "";
+														while (!saisie.equals("-1")) 
+														{
+															saisie = sc.next();
+															marque = new Marque(saisie);
+															if (!saisie.equals("-1")) 
+															{
+																marquesCompatibles.add(marque);
+																marque.toString();
+															}
+														}
+														
+														Accessoire chargeurUSB = new Usb(intitule, prix, marquesCompatibles);
+														
+														listeArticles.ajouter(chargeurUSB);
+														
+														menu = 0;
 														break;
 													case 2:
+														System.out.println("Quel est l'intitulé du chargeur allume cigare ?");
+														intitule = sc.next();
+														System.out.println("Quel est le prix du chargeur allume cigare ?");
+														prix = sc.nextDouble();
+														System.out.println("Quelles sont les marques compatibles du chargeur allume cigare ? (Rentrer une marque. Appuyer sur entrée. Faire -1 pour terminer la saisie");
+														marquesCompatibles = new TreeSet<>();
+														
+														saisie = "";
+														while (!saisie.equals("-1")) 
+														{
+															saisie = sc.next();
+															marque = new Marque(saisie);
+															if (!saisie.equals("-1")) 
+															{
+																marquesCompatibles.add(marque);
+																marque.toString();
+															}
+														}
+														
+														Accessoire chargeurAllumeCigare = new AllumeCigare(intitule, prix, marquesCompatibles);
+														
+														listeArticles.ajouter(chargeurAllumeCigare);
+														
+														menu = 0;
 														break;
 													case 3:
+														System.out.println("Quel est l'intitulé du chargeur secteur ?");
+														intitule = sc.next();
+														System.out.println("Quel est le prix du chargeur secteur ?");
+														prix = sc.nextDouble();
+														System.out.println("Quelles sont les marques compatibles du chargeur secteur ? (Rentrer une marque. Appuyer sur entrée. Faire -1 pour terminer la saisie");
+														marquesCompatibles = new TreeSet<>();
+														
+														saisie = "";
+														while (!saisie.equals("-1")) 
+														{
+															saisie = sc.next();
+															marque = new Marque(saisie);
+															if (!saisie.equals("-1")) 
+															{
+																marquesCompatibles.add(marque);
+																marque.toString();
+															}
+														}
+														
+														Accessoire secteur = new Secteur(intitule, prix, marquesCompatibles);
+														
+														listeArticles.ajouter(secteur);
+														
+														menu = 0;
 														break;
 													default:
+														System.out.println("╔══ Menu ajout accessoire Chargeur ══════════════════════════════╗");
+														System.out.println("║1) Ajouter un chargeur USB                                      ║");
+														System.out.println("║2) Ajouter un chargeur Allume cigare                            ║");
+														System.out.println("║3) Ajouter une chargeur Secteur                                 ║");
+														System.out.println("║4) Revenir au menu précédent                                    ║");
+														System.out.println("║5) Revenir au menu principal                                    ║");
+														System.out.println("║6) Sauvegarder la liste d'article                               ║");
+														System.out.println("║-1) Quitter l'application                                       ║");
+														System.out.println("╚════════════════════════════════════════════════════════════════╝");
+														
+														System.out.println("Que souhaitez-vous faire ?");
+														sousSousSousMenu = sc.nextInt();
 														break;
 												}
 											}
@@ -308,15 +394,15 @@ public class Magasin {
 											break;
 										default:
 											System.out.println("Merci de rentrer une valeur du Menu\n");
-											System.out.println("╔════════════════ Menu ajout Accessoire ════════════════╗");
-											System.out.println("║1) Ajouter un Cordon                                   ║");
-											System.out.println("║2) Ajouter un Chargeur                                 ║");
-											System.out.println("║3) Ajouter une Coque                                   ║");
-											System.out.println("║4) Revenir au menu précédent                           ║");
-											System.out.println("║5) Revenir au menu principal                           ║");
-											System.out.println("║6) Sauvegarder la liste d'article                      ║");
-											System.out.println("║-1) Quitter l'application                              ║");
-											System.out.println("╚═══════════════════════════════════════════════════════╝");
+											System.out.println("╔══ Menu ajout Accessoire ═══════════════════════════════════════╗");
+											System.out.println("║1) Ajouter un Cordon                                            ║");
+											System.out.println("║2) Ajouter un Chargeur                                          ║");
+											System.out.println("║3) Ajouter une Coque                                            ║");
+											System.out.println("║4) Revenir au menu précédent                                    ║");
+											System.out.println("║5) Revenir au menu principal                                    ║");
+											System.out.println("║6) Sauvegarder la liste d'article                               ║");
+											System.out.println("║-1) Quitter l'application                                       ║");
+											System.out.println("╚════════════════════════════════════════════════════════════════╝");
 											System.out.println("Que souhaitez-vous faire ?");
 											menu = sc.nextInt();
 											break;
@@ -325,13 +411,13 @@ public class Magasin {
 								break;
 							default:
 								System.out.println("Merci de rentrer une valeur du Menu\n");
-								System.out.println("╔═══════════════════════ Menu Ajout ═══════════════════════╗");
-								System.out.println("║1) Ajouter un Téléphone                                   ║");
-								System.out.println("║2) Ajouter un Accessoire                                  ║");
-								System.out.println("║3) Revenir au menu principal                              ║");
-								System.out.println("║4) Sauvegarder la liste d'article                         ║");
-								System.out.println("║-1) Quitter l'application                                 ║");
-								System.out.println("╚══════════════════════════════════════════════════════════╝");
+								System.out.println("╔══ Menu Ajout ══════════════════════════════════════════════════╗");
+								System.out.println("║1) Ajouter un Téléphone                                         ║");
+								System.out.println("║2) Ajouter un Accessoire                                        ║");
+								System.out.println("║3) Revenir au menu principal                                    ║");
+								System.out.println("║4) Sauvegarder la liste d'articles                              ║");
+								System.out.println("║-1) Quitter l'application                                       ║");
+								System.out.println("╚════════════════════════════════════════════════════════════════╝");
 								System.out.println("Que souhaitez-vous faire ?");
 								menu = sc.nextInt();
 								break;
@@ -339,47 +425,100 @@ public class Magasin {
 					}
 					break;
 				case 2:
+					System.out.println("Quelle est la référence de l'article à supprimer ?");
+					reference = sc.next();
+					System.out.println("Quel est l'intitulé de l'article à supprimer ?");
+					intitule = sc.next();
+					System.out.println("Quel est le prix de l'article à supprimer ?");
+					prix = sc.nextInt();
+
+					Article aSupprimer;
+					
+					if (reference.startsWith("T")) 
+					{
+						System.out.println("Quel est le nom de la marque du téléphone à supprimer ?");
+						nomM = sc.next();
+						marque = new Marque(nomM);
+						System.out.println("Quel est le nom de l'opérateur du téléphone à supprimer ?");
+						nomO = sc.next();
+						operateur = new Operateur(nomO);
+						aSupprimer = new Telephone(intitule, prix, marque, operateur);
+						listeArticles.supprimer(aSupprimer);
+					}
+					else if (reference.startsWith("A")) 
+					{
+						aSupprimer = new AllumeCigare(intitule, prix);
+						listeArticles.supprimer(aSupprimer);
+					}
+					else if (reference.startsWith("Q")) 
+					{
+						aSupprimer = new Coque(intitule, prix, couleur);
+						listeArticles.supprimer(aSupprimer);
+					}
+					else if (reference.startsWith("R")) 
+					{
+						System.out.println("Quelle est la longeur du cordon à supprimer ?");
+						nomM = sc.next();
+						aSupprimer = new Cordon(intitule, prix, longueur);
+						listeArticles.supprimer(aSupprimer);
+					}
+					else if (reference.startsWith("S")) 
+					{
+						aSupprimer = new Secteur(intitule, prix);
+						listeArticles.supprimer(aSupprimer);
+					}
+					else if (reference.startsWith("U")) 
+					{
+						aSupprimer = new Usb(intitule, prix);
+						listeArticles.supprimer(aSupprimer);
+					}
+			
 					break;
 				case 3:
-					System.out.println("coucou3");
+					listeArticles.tousLesArticles_ParRef();
 					break;
 				case 4:
-					System.out.println("coucou4");
+					listeArticles.tousLesArticles_ParIntitule();
 					break;
 				case 5:
-					System.out.println("coucou5");
+					listeArticles.tousLesArticles_ParPrix();
 					break;
 				case 6:
-					System.out.println("coucou6");
+					System.out.println("Quelle référence recherchez-vous ?");
+					reference = sc.next();
+					listeArticles.chercherArticlesReference(reference);
 					break;
 				case 7:
-					System.out.println("coucou7");
+					System.out.println("Quel intitulé recherchez-vous ?");
+					reference = sc.next();
+					listeArticles.chercherArticlesIntitule(intitule);
 					break;
 				case 8:
-					System.out.println("coucou8");
+					System.out.println("Quel prix recherchez-vous ?");
+					reference = sc.next();
+					listeArticles.chercherArticlesPrix(prix);
 					break;
 				case 9:
-					System.out.println("coucou9");
+					listeArticles.sauvegarde();
+					System.out.println("La sauvegarde a bien été effectué");
 					
-					break;
-				case -1:
-					System.out.println("coucou-1");
 					break;
 		
 				default:
 					System.out.println("Merci de rentrer une valeur du Menu\n");
-					System.out.println("╔═══════════════════════════ Menu ══════════════════════════════╗");
-					System.out.println("║1) Ajouter un article à la liste d'article                     ║");
-					System.out.println("║2) Supprimer un article de la liste d'article                  ║");
-					System.out.println("║3) Trier les articles de la liste d'article par référence      ║");
-					System.out.println("║4) Trier les articles de la liste d'article par intitulé       ║");
-					System.out.println("║5) Trier les articles de la liste d'article par prix           ║");
-					System.out.println("║6) Rechercher un article à la liste d'article par sa référence ║");
-					System.out.println("║7) Rechercher un article à la liste d'article par son intitulé ║");
-					System.out.println("║8) Rechercher un article à la liste d'article par son prix     ║");
-					System.out.println("║9) Sauvegarder la liste d'article                              ║");
-					System.out.println("║-1) Quitter l'application                                      ║");
-					System.out.println("╚═══════════════════════════════════════════════════════════════╝");
+					System.out.println("╔══ Menu ════════════════════════════════════════════════════════╗");
+					System.out.println("║1) Ajouter un article à la liste d'articles                     ║");
+					System.out.println("║2) Supprimer un article de la liste d'articles                  ║");
+					System.out.println("║3) Trier les articles de la liste d'articles par référence      ║");
+					System.out.println("║4) Trier les articles de la liste d'articles par intitulé       ║");
+					System.out.println("║5) Trier les articles de la liste d'articles par prix           ║");
+					System.out.println("║6) Rechercher un article à la liste d'articles par sa référence ║");
+					System.out.println("║7) Rechercher un article à la liste d'articles par son intitulé ║");
+					System.out.println("║8) Rechercher un article à la liste d'articles par son prix     ║");
+					System.out.println("║9) Sauvegarder la liste d'articles                              ║");
+					System.out.println("║10) Afficher la liste d'articles                                ║");
+					System.out.println("║-1) Quitter l'application                                       ║");
+					System.out.println("╚════════════════════════════════════════════════════════════════╝");
 					
 					System.out.println("Que souhaitez-vous faire ?");
 					menu = sc.nextInt();

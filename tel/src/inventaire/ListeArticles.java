@@ -106,6 +106,13 @@ public class ListeArticles
 				
 		return articleIntitule;
 	}
+	
+	public ArrayList<Article> tousLesArticles_ParPrix()
+	{
+		ArrayList<Article> articlePrix = new ArrayList<>();
+		
+		return articlePrix;
+	}
 
 	
 	/**
@@ -129,7 +136,7 @@ public class ListeArticles
 	 * @param int prix Prix que nous voulons pour les articles
 	 * @return La liste des article portant le prix souhaité - ArrayList<Article>
 	 */
-	public ArrayList<Article> chercherArticlesPrix(int prix) 
+	public ArrayList<Article> chercherArticlesPrix(double prix) 
 	{
 		ArrayList<Article> articlePrix = new ArrayList<>();
 		
@@ -142,13 +149,40 @@ public class ListeArticles
 		return articlePrix;
 	}
 	
-	/**
-	 * Redéfinition de la méthode equals
-	 * 
-	 * @return
-	 */
-//	public boolean equals()
-//	{
-//		
-//	}
+	public ArrayList<Article> chercherArticlesReference(String reference)
+	{
+		ArrayList<Article> articleReference = new ArrayList<>();
+		
+		for (Article article : articles) 
+		{
+			if (article.getReference().equals(reference))
+				articleReference.add(article);
+		}
+		
+		return articleReference;
+	}
+	
+	public ArrayList<Article> chercherArticlesIntitule(String intitule)
+	{
+		ArrayList<Article> articleIntitule = new ArrayList<>();
+		
+		for (Article article : articles) 
+		{
+			if (article.getIntitule().equals(intitule))
+				articleIntitule.add(article);
+		}
+		
+		return articleIntitule;
+	}
+	
+	public String toString()
+	{
+		String res = "";
+		
+		for (Article article : articles) 
+		{
+			res += article.toString();
+		}
+		return res;
+	}
 }

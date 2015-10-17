@@ -8,7 +8,7 @@ package inventaire;
 import java.util.UUID;
 
 /**
- * 	Classe abstraite permettant de dÃ©finir les diffÃ©rentes caractÃ©ristiques d'un article
+ * 	Classe abstraite permettant de définir les différentes caractéristiques d'un article
  */
 public abstract class Article 
 {
@@ -40,7 +40,7 @@ public abstract class Article
 	}
 	
 	/**
-	 * Getter permettant de connaitre la rÃ©fÃ©rence d'un article
+	 * Getter permettant de connaitre la référence d'un article
 	 * 
 	 * @return String reference
 	 */
@@ -50,17 +50,45 @@ public abstract class Article
 	}
 
 	/**
-	 * Setter permettant de changer la rÃ©fÃ©rence d'un article
+	 * Setter permettant de changer la référence d'un article
 	 * 
-	 * @param String reference La rÃ©fÃ©rence de l'article
+	 * @param String reference La référence de l'article
 	 */
 	public void generateUuidReference() 
 	{
-		this.reference = UUID.randomUUID().toString();
+		this.reference = estClasse() + UUID.randomUUID().toString();
+	}
+	
+	public Object estClasse()
+	{
+		String res = "";
+
+		if (this instanceof Telephone) {
+			res = "T";
+		}
+		else if (this instanceof AllumeCigare) {
+			res = "A";
+		}
+		else if (this instanceof Coque) {
+			res = "Q";
+		}
+		else if (this instanceof Cordon) {
+			res = "R";
+		}
+		else if (this instanceof Secteur) {
+			res = "S";
+		}
+		else if (this instanceof Usb) {
+			res = "U";
+		}
+		
+		
+		
+		return res;
 	}
 
 	/**
-	 * Getter permettant de connaitre l'intitulÃ© d'un article
+	 * Getter permettant de connaitre l'intitulé d'un article
 	 * 
 	 * @return String intitule
 	 */
@@ -70,9 +98,9 @@ public abstract class Article
 	}
 
 	/**
-	 * Setter permettant de changer l'intitulÃ© d'un article
+	 * Setter permettant de changer l'intitulé d'un article
 	 * 
-	 * @param String reference L'intitulÃ© de l'article
+	 * @param String reference L'intitulé de l'article
 	 */
 	public void setIntitule(String intitule) 
 	{
@@ -100,11 +128,11 @@ public abstract class Article
 	}
 	
 	/**
-	 * MÃ©thode permettant d'afficher les informations de l'article
+	 * Méthode permettant d'afficher les informations de l'article
 	 * 
 	 * @return Affichage des informations de l'article
 	 */
 	public String toString() {
-		return " a pour rÃ©fÃ©rence '" + reference + "' porte l'intitulÃ© " + intitule + " a pour prix " + prix + " euros";
+		return " a pour référence '" + reference + "' porte l'intitulé " + intitule + " a pour prix " + prix + " euros";
 	}
 }
