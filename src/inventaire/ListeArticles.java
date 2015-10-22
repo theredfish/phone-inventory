@@ -5,9 +5,18 @@
 
 package inventaire;
 
+import com.google.gson.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
+
+import utils.CompareArticleIntitule;
+import utils.CompareArticlePrix;
+import utils.CompareArticleRef;
 
 /** 
  * 	Classe permettant d'avoir une liste d'article
@@ -15,10 +24,22 @@ import java.util.*;
 public class ListeArticles
 {
 	/**
+	 * Chemin vers le fichier gérant les informations d'inventaire
+	 */
+	private final String fichierSauvegarde = "../save.txt";
+	
+	/**
+	 * Objet Gson pour la gestion du JSON.
+	 * Permet d'utiliser des services pour la gestion
+	 * de l'inventaire.
+	 */
+	private Gson gson;
+	
+	/**
 	 * ArrayList Liste des articles
 	 */
-	ArrayList<Article> articles;
-
+	private ArrayList<Article> articles;
+	
 	/**
 	 * Constructeur de la classe ListeArticles
 	 * 
@@ -27,6 +48,7 @@ public class ListeArticles
 	public ListeArticles(ArrayList<Article> articles) 
 	{
 		this.articles = articles;
+		this.gson = new Gson();
 	}
 	
 	/**
@@ -35,6 +57,7 @@ public class ListeArticles
 	public ListeArticles() 
 	{
 		this.articles = new ArrayList<Article>();
+		this.gson = new Gson();
 	}
 	
 	/**
@@ -87,11 +110,19 @@ public class ListeArticles
 	 * @param String reference Référence que nous voulons pour les articles
 	 * @return La liste des article portant la référence souhaitée - ArrayList<Article>
 	 */
-	public ArrayList<Article> tousLesArticles_ParRef() 
+	public void tousLesArticles_ParRef() 
 	{
-		ArrayList<Article> articleRef = new ArrayList<>();
+		Comparator<Article> c;
 		
-		return articleRef;
+		c = new CompareArticleRef();
+		
+		Collections.sort(articles, c);
+		
+		if (articles.size() == 0)
+			System.out.println("Aucun article n'est présent.");
+		else
+			for (Article article : articles)
+				System.out.println(article.toString());
 	}
 
 	/**
@@ -100,36 +131,69 @@ public class ListeArticles
 	 * @param String intitule Intitulé que nous voulons pour les articles
 	 * @return La liste des article portant l'intitulé souhaité - ArrayList<Article>
 	 */
-	public ArrayList<Article> tousLesArticles_ParIntitule() 
+	public void tousLesArticles_ParIntitule() 
 	{
-		ArrayList<Article> articleIntitule = new ArrayList<>();
-				
-		return articleIntitule;
+		Comparator<Article> c;
+		
+		c = new CompareArticleIntitule();
+		
+		Collections.sort(articles, c);
+		
+		if (articles.size() == 0)
+			System.out.println("Aucun article n'est présent.");
+		else
+			for (Article article : articles)
+				System.out.println(article.toString());
+	}
+	
+	public void tousLesArticles_ParPrix()
+	{
+		Comparator<Article> c;
+		
+		c = new CompareArticlePrix();
+		
+		Collections.sort(articles, c);
+		
+		if (articles.size() == 0)
+			System.out.println("Aucun article n'est présent.");
+		else
+			for (Article article : articles)
+				System.out.println(article.toString());
 	}
 
-	
 	/**
 	 * Methode permettant de sauvegarder les articles dans un fichier
+	 * @throws FileNotFoundException, IOException 
 	 */
-	public void sauvegarde()
+	public void sauvegarde() throws FileNotFoundException, IOException
 	{
-		try
-		{
-			FileWriter fileSave = new FileWriter("../save.txt");
-		}
-		catch (IOException message)
-		{
-			System.out.println(message.getMessage());
-		}
+		FileWriter write_file = new FileWriter(fichierSauvegarde);
+		BufferedWriter buffer_writer = new BufferedWriter(write_file);
+		
+		String json = gson.toJson(articles);
+       
+		System.out.println(json);
 	}
 	
 	/**
-	 * Méthode permettant d'afficher tous les articles suivant leur prix
+	 * Méthode permettant de charger l'inventaire
+	 * 
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
+	private void charger() throws FileNotFoundException, IOException
+	{
+		FileReader read_file = new FileReader(fichierSauvegarde);
+		BufferedReader buffer_reader = new BufferedReader(read_file);
+	}
+	
+	/**
+	 * Méthode permettant de rechercher tous les articles suivant leur prix
 	 * 
 	 * @param int prix Prix que nous voulons pour les articles
 	 * @return La liste des article portant le prix souhaité - ArrayList<Article>
 	 */
-	public ArrayList<Article> chercherArticlesPrix(int prix) 
+	public ArrayList<Article> chercherArticlesPrix(double prix) 
 	{
 		ArrayList<Article> articlePrix = new ArrayList<>();
 		
@@ -143,12 +207,39 @@ public class ListeArticles
 	}
 	
 	/**
-	 * Redéfinition de la méthode equals
+	 * Méthode permettant de chercher un article par sa référence.
+	 * Une référence est forcément unique.
 	 * 
-	 * @return
+	 * @param reference qui représente la référence de l'article.
+	 * @return null sinon l'article s'il est trouvé.
 	 */
-	public boolean equals()
-	{
+	public Article chercherArticleReference(String reference)
+	{	
+		for (Article article : articles) 
+		{
+			if (article.getReference().equals(reference))
+				return article;
+		}
 		
+		return null;
+	}
+	
+	/**
+	 * Méthode permettant de chercher les articles selon leur intitulé.
+	 * 
+	 * @param intitule qui représente l'intitulé de l'article.
+	 * @return l'ensemble des articles portant l'intitulé.
+	 */
+	public ArrayList<Article> chercherArticlesIntitule(String intitule)
+	{
+		ArrayList<Article> articleIntitule = new ArrayList<>();
+		
+		for (Article article : articles) 
+		{
+			if (article.getIntitule().equals(intitule))
+				articleIntitule.add(article);
+		}
+		
+		return articleIntitule;
 	}
 }

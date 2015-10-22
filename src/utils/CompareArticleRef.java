@@ -6,7 +6,6 @@
 package utils;
 
 import java.util.Comparator;
-
 import inventaire.Article;
 
 /**

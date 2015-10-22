@@ -10,7 +10,7 @@ import java.util.UUID;
 /**
  * 	Classe abstraite permettant de définir les différentes caractéristiques d'un article
  */
-public abstract class Article 
+public abstract class Article
 {
 	/**
 	 * String La reference d'un article
@@ -97,6 +97,24 @@ public abstract class Article
 	public void setPrix(double prix) 
 	{
 		this.prix = prix;
+	}
+	
+	/**
+	 * Redéfinition de la méthode equals
+	 * 
+	 * @return boolean vrai si les objets sont égaux, faux sinon 
+	 */
+	public boolean equals(Object o) {
+		if (o instanceof Article) {
+			Article article = (Article) o;
+			
+			// On omet la référence car elle n'entre pas dans les critères de comparaison.
+			// De plus elle rend unique et donc différent chaque article (jamais equals).
+			return (article.intitule.equalsIgnoreCase(this.intitule)
+					&& article.prix == this.prix);
+		}
+		
+		return super.equals(o);
 	}
 	
 	/**

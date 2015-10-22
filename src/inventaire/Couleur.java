@@ -10,5 +10,28 @@ package inventaire;
  */
 public enum Couleur 
 {
-	Bleu, Noir, Blanc, Rouge, Vert, Rose, Jaune, Orange, BleuTurquoise, Beige, Marron
+	Bleu("Bleu"), Noir("Noir"), Blanc("Blanc");
+	
+	private String couleur;
+	
+	private Couleur(String couleur)
+	{
+		this.couleur = couleur;
+	}
+	
+	public static boolean couleurExiste(String couleur)
+	{
+		Couleur[] couleurs = Couleur.values();
+		
+		for (Couleur c : couleurs)
+			if (c.toString().equalsIgnoreCase(couleur))
+				return true;
+
+		return false;
+	}
+	
+	public String getCouleur()
+	{
+		return this.couleur;
+	}
 }

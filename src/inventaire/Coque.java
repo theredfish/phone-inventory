@@ -37,7 +37,7 @@ public class Coque extends Accessoire
 	 * @param String intitule : L'intitulé d'un article
 	 * @param double prix : Le prix d'un article
 	 */
-	protected Coque(String intitule, double prix, Couleur couleur) 
+	public Coque(String intitule, double prix, Couleur couleur) 
 	{
 		super(intitule, prix);
 		this.couleur = couleur;
