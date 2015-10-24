@@ -10,7 +10,7 @@ package inventaire;
  */
 public enum Couleur 
 {
-	Bleu("Bleu"), Noir("Noir"), Blanc("Blanc");
+	BLEU("Bleu"), NOIR("Noir"), BLANC("Blanc");
 	
 	private String couleur;
 	
@@ -30,7 +30,7 @@ public enum Couleur
 		return false;
 	}
 	
-	public String getCouleur()
+	public String toString()
 	{
 		return this.couleur;
 	}

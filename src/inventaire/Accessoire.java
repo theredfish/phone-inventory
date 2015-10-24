@@ -68,12 +68,12 @@ public abstract class Accessoire extends Article
 	 */
 	public String toString() 
 	{
-		String result = super.toString() + " est compatible avec les marques suivantes :\n";
+		String result = super.toString() + " est compatible avec les marques suivantes : ";
 		
 		if (!marquesCompatibles.isEmpty()) 
 		{
-			for (Marque marque : marquesCompatibles)
-				result += "- " + marque.toString() +"\n";
+			for (Marque marque : getMarquesCompatibles())
+				result += marque.toString() +";";
 		}
 		else 
 		{

@@ -80,6 +80,6 @@ public class Telephone extends Article
 	 */
 	public String toString() 
 	{
-		return "Téléphone de la marque " + marque + " avec l'opérateur " + operateur + super.toString();
+		return "Téléphone de la marque " + getMarque() + " avec l'opérateur " + getOperateur() + super.toString();
 	}
 }

@@ -40,6 +40,16 @@ public abstract class Article
 	}
 	
 	/**
+	 * Setter permettant de changer la référence d'un article
+	 * 
+	 * @param String reference La référence de l'article
+	 */
+	private void generateUuidReference() 
+	{
+		this.reference = UUID.randomUUID().toString();
+	}
+	
+	/**
 	 * Getter permettant de connaitre la référence d'un article
 	 * 
 	 * @return String reference
@@ -47,16 +57,6 @@ public abstract class Article
 	public String getReference() 
 	{
 		return reference;
-	}
-
-	/**
-	 * Setter permettant de changer la référence d'un article
-	 * 
-	 * @param String reference La référence de l'article
-	 */
-	public void generateUuidReference() 
-	{
-		this.reference = UUID.randomUUID().toString();
 	}
 
 	/**
@@ -123,6 +123,6 @@ public abstract class Article
 	 * @return Affichage des informations de l'article
 	 */
 	public String toString() {
-		return " a pour référence '" + reference + "' porte l'intitulé " + intitule + " a pour prix " + prix + " euros";
+		return " a pour référence '" + getReference() + "' porte l'intitulé " + getIntitule() + " a pour prix " + getPrix() + " euros";
 	}
 }

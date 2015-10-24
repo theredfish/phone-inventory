@@ -30,6 +30,6 @@ public class Usb extends Chargeur
 	 */
 	public String toString() 
 	{
-		return "Chargeur secteur " + super.toString();
+		return "Chargeur USB " + super.toString();
 	}
 }

@@ -25,7 +25,7 @@ public class Coque extends Accessoire
 	 * @param TreeSet<Marque> marquesCompatibles : Les marques associées à la coque
 	 * @param Couleur couleur : La couleur de la coque
 	 */
-	public Coque(String intitule, double prix, TreeSet<Marque> marquesCompatibles, Couleur couleur) 
+	public Coque(String intitule, double prix, Couleur couleur, TreeSet<Marque> marquesCompatibles) 
 	{
 		super(intitule, prix, marquesCompatibles);
 		this.couleur = couleur;
@@ -43,6 +43,13 @@ public class Coque extends Accessoire
 		this.couleur = couleur;
 		this.marquesCompatibles = new TreeSet<Marque>();
 	}
+	
+	/**
+	 * @return la couleur
+	 */
+	public Couleur getCouleur() {
+		return couleur;
+	}
 
 	/**
 	 * Redéfinition de la méthode toString
@@ -52,6 +59,6 @@ public class Coque extends Accessoire
 	 */
 	public String toString() 
 	{
-		return "La coque " + couleur + super.toString();
+		return "La coque " + couleur.toString() + super.toString();
 	}
 }

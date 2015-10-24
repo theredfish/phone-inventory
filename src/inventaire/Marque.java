@@ -8,7 +8,7 @@ package inventaire;
 /**
  * 	Classe permettant de définir les différentes caractéristiques d'une marque.
  */
-public class Marque 
+public class Marque implements Comparable<Marque>
 {
 	/**
 	 * String le nom d'une marque
@@ -52,5 +52,19 @@ public class Marque
 	public String toString() 
 	{
 		return nom;
+	}
+
+	public boolean equals(Object o) {
+		if (o instanceof Marque) {
+			Marque m = (Marque) o;
+			
+			return (m.nom.equalsIgnoreCase(this.nom));
+		}
+		else
+			return super.equals(o);
+	}
+
+	public int compareTo(Marque m) {
+		return this.nom.compareToIgnoreCase(m.nom);
 	}
 }

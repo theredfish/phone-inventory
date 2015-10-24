@@ -5,11 +5,8 @@
 
 package inventaire;
 
-import com.google.gson.*;
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
@@ -26,14 +23,7 @@ public class ListeArticles
 	/**
 	 * Chemin vers le fichier gérant les informations d'inventaire
 	 */
-	private final String fichierSauvegarde = "../save.txt";
-	
-	/**
-	 * Objet Gson pour la gestion du JSON.
-	 * Permet d'utiliser des services pour la gestion
-	 * de l'inventaire.
-	 */
-	private Gson gson;
+	private final String fichierListeArticles = "./listeArticles.txt";
 	
 	/**
 	 * ArrayList Liste des articles
@@ -48,7 +38,6 @@ public class ListeArticles
 	public ListeArticles(ArrayList<Article> articles) 
 	{
 		this.articles = articles;
-		this.gson = new Gson();
 	}
 	
 	/**
@@ -57,7 +46,6 @@ public class ListeArticles
 	public ListeArticles() 
 	{
 		this.articles = new ArrayList<Article>();
-		this.gson = new Gson();
 	}
 	
 	/**
@@ -97,7 +85,7 @@ public class ListeArticles
 	 * dans la liste des articles.
 	 * 
 	 * @param article
-	 * @return boolean True si l'article à bien été ajouté sinon False
+	 * @return boolean true si l'article à bien été ajouté sinon false
 	 */
 	public boolean contient(Article article)
 	{
@@ -160,33 +148,20 @@ public class ListeArticles
 			for (Article article : articles)
 				System.out.println(article.toString());
 	}
-
-	/**
-	 * Methode permettant de sauvegarder les articles dans un fichier
-	 * @throws FileNotFoundException, IOException 
-	 */
+	
 	public void sauvegarde() throws FileNotFoundException, IOException
-	{
-		FileWriter write_file = new FileWriter(fichierSauvegarde);
-		BufferedWriter buffer_writer = new BufferedWriter(write_file);
+	{	
+		FileWriter file_articles = new FileWriter(fichierListeArticles);
+		BufferedWriter buffer_articles = new BufferedWriter(file_articles);
 		
-		String json = gson.toJson(articles);
-       
-		System.out.println(json);
+		for (Article article : articles) {
+			buffer_articles.write(article.toString() + "\n");
+		}
+		
+		buffer_articles.close();
+		
 	}
-	
-	/**
-	 * Méthode permettant de charger l'inventaire
-	 * 
-	 * @throws FileNotFoundException
-	 * @throws IOException
-	 */
-	private void charger() throws FileNotFoundException, IOException
-	{
-		FileReader read_file = new FileReader(fichierSauvegarde);
-		BufferedReader buffer_reader = new BufferedReader(read_file);
-	}
-	
+
 	/**
 	 * Méthode permettant de rechercher tous les articles suivant leur prix
 	 * 

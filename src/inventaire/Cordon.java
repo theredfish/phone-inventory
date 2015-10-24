@@ -66,6 +66,6 @@ public class Cordon extends Accessoire
 	 */
 	public String toString()
 	{
-		return "Le cordon " + super.toString();
+		return "Le cordon de longueur " + getLongueur() + " cm" + super.toString();
 	}
 }

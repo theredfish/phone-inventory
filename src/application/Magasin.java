@@ -1,6 +1,10 @@
+/**
+ * @author Marina Blin - Julian Didier
+ * @version 1.0.0
+ */
+
 package application;
 
-import inventaire.Accessoire;
 import inventaire.AllumeCigare;
 import inventaire.Article;
 import inventaire.Coque;
@@ -13,10 +17,8 @@ import inventaire.Secteur;
 import inventaire.Telephone;
 import inventaire.Usb;
 
-import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -50,6 +52,7 @@ public class Magasin {
 	 */
 	public void menuPrincipal()
 	{
+
 		System.out.println("╔══ Menu ════════════════════════════════════════════════════════╗");
 		System.out.println("║1) Ajouter un article à la liste d'articles                     ║");
 		System.out.println("║2) Supprimer un article de la liste d'articles                  ║");
@@ -60,7 +63,6 @@ public class Magasin {
 		System.out.println("║7) Rechercher un article à la liste d'articles par son intitulé ║");
 		System.out.println("║8) Rechercher un article à la liste d'articles par son prix     ║");
 		System.out.println("║9) Sauvegarder la liste d'articles                              ║");
-		System.out.println("║10) Afficher la liste d'articles                                ║");
 		System.out.println("║-1) Quitter l'application                                       ║");
 		System.out.println("╚════════════════════════════════════════════════════════════════╝");
 		
@@ -83,7 +85,6 @@ public class Magasin {
 					case 7: rechercherArticles_ParIntitule();
 					case 8: rechercherArticles_ParPrix();
 					case 9: sauvegarderListe();
-					case 10: listeArticles.toString();
 					case -1:
 						System.out.println("Application fermée.");
 						System.exit(0);
@@ -173,8 +174,7 @@ public class Magasin {
 		
 		listeArticles.ajouter(telephone);
 		
-		System.out.println("L'article téléphone a bien été ajouté");
-		System.out.println(telephone.toString());
+		System.out.println("L'article a bien été ajouté");
 		
 		menuPrincipal();
 	}
@@ -262,9 +262,7 @@ public class Magasin {
 		System.out.println("Quelles sont les marques compatibles du cordon ? (Entrez une marque. Appuyer sur entrée. Faire -1 pour terminer la saisie");
 		TreeSet<Marque> marquesCompatibles = saisirMarquesCompatibles();
 		
-		Accessoire cordon = new Cordon(intitule, prix, longueur, marquesCompatibles);
-		
-		listeArticles.ajouter(cordon);
+		listeArticles.ajouter(new Cordon(intitule, prix, longueur, marquesCompatibles));
 		
 		ajouterAccessoire();
 	}
@@ -308,8 +306,10 @@ public class Magasin {
 				System.out.println("Cette couleur n'est pas présente. Veuillez en resaisir une.");
 			}
 		}
+		System.out.println("Quelles sont les marques compatibles du cordon ? (Entrez une marque. Appuyer sur entrée. Faire -1 pour terminer la saisie");
+		TreeSet<Marque> marquesCompatibles = saisirMarquesCompatibles();
 		
-		listeArticles.ajouter(new Coque(intitule, prix, couleur));
+		listeArticles.ajouter(new Coque(intitule, prix, couleur, marquesCompatibles));
 		
 		ajouterAccessoire();
 	}
@@ -383,9 +383,7 @@ public class Magasin {
 		System.out.println("Quelles sont les marques compatibles du chargeur USB ? (Rentrer une marque. Appuyer sur entrée. Faire -1 pour terminer la saisie");
 		TreeSet<Marque> marquesCompatibles = saisirMarquesCompatibles();
 		
-		Accessoire chargeurUSB = new Usb(intitule, prix, marquesCompatibles);
-		
-		listeArticles.ajouter(chargeurUSB);
+		listeArticles.ajouter(new Usb(intitule, prix, marquesCompatibles));
 		
 		ajouterChargeur();
 	}
@@ -415,9 +413,7 @@ public class Magasin {
 		System.out.println("Quelles sont les marques compatibles du chargeur allume cigare ? (Rentrer une marque. Appuyer sur entrée. Faire -1 pour terminer la saisie");
 		TreeSet<Marque> marquesCompatibles = saisirMarquesCompatibles();
 		
-		Accessoire chargeurAllumeCigare = new AllumeCigare(intitule, prix, marquesCompatibles);
-		
-		listeArticles.ajouter(chargeurAllumeCigare);
+		listeArticles.ajouter(new AllumeCigare(intitule, prix, marquesCompatibles));
 		
 		ajouterChargeur();
 	}
@@ -447,9 +443,7 @@ public class Magasin {
 		System.out.println("Quelles sont les marques compatibles du chargeur secteur? (Rentrer une marque. Appuyer sur entrée. Faire -1 pour terminer la saisie");
 		TreeSet<Marque> marquesCompatibles = saisirMarquesCompatibles();
 		
-		Accessoire chargeurSecteur = new Secteur(intitule, prix, marquesCompatibles);
-		
-		listeArticles.ajouter(chargeurSecteur);
+		listeArticles.ajouter(new Secteur(intitule, prix, marquesCompatibles));
 		
 		ajouterChargeur();
 	}
@@ -519,6 +513,9 @@ public class Magasin {
 		
 		ArrayList<Article> articles = listeArticles.chercherArticlesIntitule(intitule);
 		
+		if (articles.isEmpty())
+			System.out.println("Aucun article portant cet intitulé.");
+		
 		for (Article article : articles) {
 			System.out.println(article.toString());
 		}
@@ -560,17 +557,13 @@ public class Magasin {
 	{
 		try {
 			listeArticles.sauvegarde();
+		} catch (FileNotFoundException e) {
+			System.out.println("Fichier non trouvé.");
 		} catch (IOException e) {
-			System.out.println("Un problème est survenu lors de l'ouverture du fichier");
+			System.out.println("Un problème est survenu lors de l'accès au fichier de sauvegarde.");
 		}
-	}
-	
-	/**
-	 * Méthode utilitaire permettant de charger la liste des articles
-	 */
-	private void chargerLister()
-	{
-		// todo
+		
+		menuPrincipal();
 	}
 	
 	/**
