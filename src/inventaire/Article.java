@@ -70,16 +70,6 @@ public abstract class Article
 	}
 
 	/**
-	 * Setter permettant de changer l'intitulé d'un article
-	 * 
-	 * @param String reference L'intitulé de l'article
-	 */
-	public void setIntitule(String intitule) 
-	{
-		this.intitule = intitule;
-	}
-
-	/**
 	 * Getter permettant de connaitre le prix d'un article
 	 * 
 	 * @return int prix
@@ -89,16 +79,6 @@ public abstract class Article
 		return this.prix;
 	}
 
-	/**
-	 * Setter permettant de changer le prix d'un article
-	 * 
-	 * @param int reference Le prix de l'article
-	 */
-	public void setPrix(double prix) 
-	{
-		this.prix = prix;
-	}
-	
 	/**
 	 * Redéfinition de la méthode equals
 	 * 
@@ -120,9 +100,11 @@ public abstract class Article
 	/**
 	 * Méthode permettant d'afficher les informations de l'article
 	 * 
-	 * @return Affichage des informations de l'article
+	 * @return String
 	 */
 	public String toString() {
-		return " a pour référence '" + getReference() + "' porte l'intitulé " + getIntitule() + " a pour prix " + getPrix() + " euros";
+		return " a pour référence '" + getReference() 
+				+ "' porte l'intitulé " + getIntitule() 
+				+ " a pour prix " + getPrix() + " euros";
 	}
 }
