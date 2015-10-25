@@ -53,7 +53,13 @@ public class Marque implements Comparable<Marque>
 	{
 		return nom;
 	}
-
+	
+	/**
+	 * Redéfinition de la méthode equals
+	 * Permet de comparer un objet avec l'instance de la classe et ses attributs
+	 * 
+	 * @return true si les objets sont égaux sinon false
+	 */
 	public boolean equals(Object o) {
 		if (o instanceof Marque) {
 			Marque m = (Marque) o;
@@ -63,7 +69,13 @@ public class Marque implements Comparable<Marque>
 		else
 			return super.equals(o);
 	}
-
+	
+	/**
+	 * Définition de la classe compareTo
+	 * 
+	 * @return un entier négatif, zéro, ou un entier positif si l'objet 
+	 * est plus petit, égal ou plus grand que l'objet spécifié
+	 */
 	public int compareTo(Marque m) {
 		return this.nom.compareToIgnoreCase(m.nom);
 	}
