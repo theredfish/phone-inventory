@@ -168,7 +168,7 @@ public class ListeArticles
 	 */
 	public ArrayList<Article> chercherArticlesPrix(double prix) 
 	{
-		ArrayList<Article> articlePrix = new ArrayList<>();
+		ArrayList<Article> articlePrix = new ArrayList<Article>();
 		
 		for (Article article : articles) 
 		{
