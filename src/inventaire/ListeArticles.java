@@ -96,19 +96,14 @@ public class ListeArticles
 	{
 		return articles.contains(article);
 	}
-
+	
 	/**
-	 * Méthode permettant d'afficher tous les articles suivant leur référence
+	 * Méthode utilitaire permettant de trier les articles.
 	 * 
-	 * @param String reference Référence que nous voulons pour les articles
-	 * @return La liste des article portant la référence souhaitée - ArrayList<Article>
+	 * @param c qui représente le comparateur d'articles.
 	 */
-	public void tousLesArticles_ParRef() 
+	private void trieArticles(Comparator<Article> c)
 	{
-		Comparator<Article> c;
-		
-		c = new CompareArticleRef();
-		
 		Collections.sort(articles, c);
 		
 		if (getTaille() == 0)
@@ -116,44 +111,42 @@ public class ListeArticles
 		else
 			for (Article article : articles)
 				System.out.println(article.toString());
+	}
+
+	/**
+	 * Méthode permettant d'afficher tous les articles suivant leur référence
+	 * 
+	 */
+	public void tousLesArticles_ParRef() 
+	{
+		Comparator<Article> c = new CompareArticleRef();
+		trieArticles(c);
 	}
 
 	/**
 	 * Méthode permettant d'afficher tous les articles suivant leur intitulé
-	 * 
-	 * @param String intitule Intitulé que nous voulons pour les articles
-	 * @return La liste des article portant l'intitulé souhaité - ArrayList<Article>
 	 */
 	public void tousLesArticles_ParIntitule() 
 	{
-		Comparator<Article> c;
-		
-		c = new CompareArticleIntitule();
-		
-		Collections.sort(articles, c);
-		
-		if (getTaille() == 0)
-			System.out.println("Aucun article n'est présent.");
-		else
-			for (Article article : articles)
-				System.out.println(article.toString());
+		Comparator<Article> c = new CompareArticleIntitule();
+		trieArticles(c);
 	}
 	
+	/**
+	 * Méthode permettant d'afficher tous les articles suivant leur prix
+	 */
 	public void tousLesArticles_ParPrix()
 	{
-		Comparator<Article> c;
-		
-		c = new CompareArticlePrix();
-		
-		Collections.sort(articles, c);
-		
-		if (getTaille() == 0)
-			System.out.println("Aucun article n'est présent.");
-		else
-			for (Article article : articles)
-				System.out.println(article.toString());
+		Comparator<Article> c = new CompareArticlePrix();
+		trieArticles(c);
 	}
 	
+	/**
+	 * Méthode permettant de sauvegarder les articles dans un fichier
+	 * 
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 */
 	public void sauvegarde() throws FileNotFoundException, IOException
 	{	
 		FileWriter file_articles = new FileWriter(fichierListeArticles);
