@@ -36,16 +36,6 @@ public class Marque implements Comparable<Marque>
 	}
 
 	/**
-	 * Setter permettant de définir le nom d'une marque
-	 * 
-	 * @param String nom : Le nom de la parque
-	 */
-	public void setNom(String nom) 
-	{
-		this.nom = nom;
-	}
-
-	/**
 	 * Redéfinition de la méthode toString
 	 * @return Affiche le nom de la marque
 	 */

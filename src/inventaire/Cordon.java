@@ -52,15 +52,6 @@ public class Cordon extends Accessoire
 	}
 
 	/**
-	 * Setter permettant de définir la longueur du cordon
-	 * 
-	 * @param double longueur
-	 */
-	public void setLongueur(double longueur) {
-		this.longueur = longueur;
-	}
-
-	/**
 	 * Redéfinition de la méthode toString
 	 * Affiche les informations d'un cordon
 	 */

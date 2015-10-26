@@ -45,16 +45,6 @@ public class Telephone extends Article
 	}
 
 	/**
-	 * Setter permettant de changer l'operateur du téléphone
-	 * 
-	 * @param Operateur operateur : L'operateur du téléphone
-	 */
-	public void setOperateur(Operateur operateur) 
-	{
-		this.operateur = operateur;
-	}
-
-	/**
 	 * Getter permettant de connaitre la marque d'un téléphone
 	 * 
 	 * @return Marque marque
@@ -62,16 +52,6 @@ public class Telephone extends Article
 	public Marque getMarque() 
 	{
 		return marque;
-	}
-
-	/**
-	 * Setter permettant de changer la marque du téléphone
-	 * 
-	 * @param Marque marque : La marque du téléphone
-	 */
-	public void setMarque(Marque marque) 
-	{
-		this.marque = marque;
 	}
 
 	/**

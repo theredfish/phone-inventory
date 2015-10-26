@@ -24,16 +24,18 @@ public class Operateur
 		this.nom = nom;		
 	}
 
-	// Definition getter and setter
+	/**
+	 * Méthode permettant de récupérer le nom d'un opérateur.
+	 * @return String
+	 */
 	public String getNom() {
 		return this.nom;
 	}
 
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-
-	// Definition method (process?)
+	/**
+	 * Méthode permettant d'afficher un opérateur
+	 * @return String
+	 */
 	public String toString()
 	{
 		return nom;
