@@ -25,6 +25,8 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.TreeSet;
 
+import utils.ListeArticlesException;
+
 public class Magasin {
 	
 	/**
@@ -172,9 +174,12 @@ public class Magasin {
 		
 		Article telephone = new Telephone(intitule, prix, marque, operateur);
 		
-		listeArticles.ajouter(telephone);
-		
-		System.out.println("L'article a bien été ajouté");
+		try {
+			listeArticles.ajouter(telephone);
+			System.out.println("L'article a bien été ajouté");
+		} catch (ListeArticlesException e) {
+			System.out.println(e.getMessage());
+		}
 		
 		menuPrincipal();
 	}
@@ -262,7 +267,12 @@ public class Magasin {
 		System.out.println("Quelles sont les marques compatibles du cordon ? (Entrez une marque. Appuyer sur entrée. Faire -1 pour terminer la saisie");
 		TreeSet<Marque> marquesCompatibles = saisirMarquesCompatibles();
 		
-		listeArticles.ajouter(new Cordon(intitule, prix, longueur, marquesCompatibles));
+		try {
+			listeArticles.ajouter(new Cordon(intitule, prix, longueur, marquesCompatibles));
+			System.out.println("Le cordon a bien été ajouté.");
+		} catch (ListeArticlesException e) {
+			System.out.println(e.getMessage());
+		}
 		
 		ajouterAccessoire();
 	}
@@ -306,10 +316,15 @@ public class Magasin {
 				System.out.println("Cette couleur n'est pas présente. Veuillez en resaisir une.");
 			}
 		}
-		System.out.println("Quelles sont les marques compatibles du cordon ? (Entrez une marque. Appuyer sur entrée. Faire -1 pour terminer la saisie");
+		System.out.println("Quelles sont les marques compatibles de la coque ? (Entrez une marque. Appuyer sur entrée. Faire -1 pour terminer la saisie");
 		TreeSet<Marque> marquesCompatibles = saisirMarquesCompatibles();
 		
-		listeArticles.ajouter(new Coque(intitule, prix, couleur, marquesCompatibles));
+		try {
+			listeArticles.ajouter(new Coque(intitule, prix, couleur, marquesCompatibles));
+			System.out.println("La coque a bien été ajoutée");
+		} catch (ListeArticlesException e) {
+			System.out.println(e.getMessage());
+		}
 		
 		ajouterAccessoire();
 	}
@@ -383,7 +398,12 @@ public class Magasin {
 		System.out.println("Quelles sont les marques compatibles du chargeur USB ? (Rentrer une marque. Appuyer sur entrée. Faire -1 pour terminer la saisie");
 		TreeSet<Marque> marquesCompatibles = saisirMarquesCompatibles();
 		
-		listeArticles.ajouter(new Usb(intitule, prix, marquesCompatibles));
+		try {
+			listeArticles.ajouter(new Usb(intitule, prix, marquesCompatibles));
+			System.out.println("Le chargeur USB a bien été ajouté.");
+		} catch (ListeArticlesException e) {
+			System.out.println(e.getMessage());
+		}
 		
 		ajouterChargeur();
 	}
@@ -413,7 +433,12 @@ public class Magasin {
 		System.out.println("Quelles sont les marques compatibles du chargeur allume cigare ? (Rentrer une marque. Appuyer sur entrée. Faire -1 pour terminer la saisie");
 		TreeSet<Marque> marquesCompatibles = saisirMarquesCompatibles();
 		
-		listeArticles.ajouter(new AllumeCigare(intitule, prix, marquesCompatibles));
+		try {
+			listeArticles.ajouter(new AllumeCigare(intitule, prix, marquesCompatibles));
+			System.out.println("L'allume cigare a bien été ajouté.");
+		} catch (ListeArticlesException e) {
+			System.out.println(e.getMessage());
+		}
 		
 		ajouterChargeur();
 	}
@@ -443,7 +468,12 @@ public class Magasin {
 		System.out.println("Quelles sont les marques compatibles du chargeur secteur? (Rentrer une marque. Appuyer sur entrée. Faire -1 pour terminer la saisie");
 		TreeSet<Marque> marquesCompatibles = saisirMarquesCompatibles();
 		
-		listeArticles.ajouter(new Secteur(intitule, prix, marquesCompatibles));
+		try {
+			listeArticles.ajouter(new Secteur(intitule, prix, marquesCompatibles));
+			System.out.println("Le chargeur secteur a bien été ajouté.");
+		} catch (ListeArticlesException e) {
+			System.out.println(e.getMessage());
+		}
 		
 		ajouterChargeur();
 	}

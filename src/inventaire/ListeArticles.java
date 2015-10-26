@@ -14,6 +14,7 @@ import java.util.*;
 import utils.CompareArticleIntitule;
 import utils.CompareArticlePrix;
 import utils.CompareArticleRef;
+import utils.ListeArticlesException;
 
 /** 
  * 	Classe permettant d'avoir une liste d'article
@@ -53,10 +54,14 @@ public class ListeArticles
 	 * 
 	 * @param Article article Article que l'on souhaite ajouter à la liste
 	 * @return boollean True si l'article à bien été ajouté sinon False
+	 * @throws ListeArticlesException 
 	 */
-	public boolean ajouter(Article article) 
+	public boolean ajouter(Article article) throws ListeArticlesException 
 	{
-		return articles.add(article);
+		if (!contient(article))
+			return articles.add(article);
+		else
+			throw new ListeArticlesException("Cet article est déjà présent dans la liste.");
 	}
 	
 	/**
@@ -106,7 +111,7 @@ public class ListeArticles
 		
 		Collections.sort(articles, c);
 		
-		if (articles.size() == 0)
+		if (getTaille() == 0)
 			System.out.println("Aucun article n'est présent.");
 		else
 			for (Article article : articles)
@@ -127,7 +132,7 @@ public class ListeArticles
 		
 		Collections.sort(articles, c);
 		
-		if (articles.size() == 0)
+		if (getTaille() == 0)
 			System.out.println("Aucun article n'est présent.");
 		else
 			for (Article article : articles)
@@ -142,7 +147,7 @@ public class ListeArticles
 		
 		Collections.sort(articles, c);
 		
-		if (articles.size() == 0)
+		if (getTaille() == 0)
 			System.out.println("Aucun article n'est présent.");
 		else
 			for (Article article : articles)
